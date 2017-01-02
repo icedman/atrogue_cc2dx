@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Traps</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Traps</font></b></center>
+
+<p>The player character can be affected by a variety of traps with very
+different effects as he walks around in the dungeon. The traps aren't placed at
+certain, constant locations ("permanent traps" as in other Rogue-like games)
+but rather occur at random locations and random times ("one-time traps").</p>
+
+<p>Trap handling is implemented in the source code file dungeon.c, function
+section_handle_traps(). The actual kind of trap which triggers is selected by
+chance and conditions: some trap kinds can only trigger under certain
+conditions; for example, a bear trap can't work if the player character is
+currently immaterial, and a trapdoor can't work if he's currently floating in
+the air. Also, traps can <i>fail</i> by chance (depending e.g. on the selected
+gameplay difficulty and on the current storey - in deeper storeys, traps fail
+less often) or if the player character is protected by certain means. Here's a
+short overview of some of the implemented trap kinds:</p>
+
+<ul>
+<li>trapdoor: the character falls down through a trapdoor and enters the next
+deeper storey</li>
+<li>holding traps: bear trap, pit; those holding traps aren't only different
+names for the same thing, they actually work in different ways; for example,
+when the character gets stuck in a pit and doesn't try to move (e.g. rests
+instead), the pit fills with water after a few ticks and the character
+drowns</li>
+<li>rust: the character is hit by a gush of water; if his current armor is made
+of metal and not protected, it may start rusting and fall to pieces soon</li>
+<li>falling rocks: some stones fall down from the ceiling on the character's
+head, causing injury (costing health points)</li>
+<li>dart: a cursed poison dart hits the character's shoulder, poisoning him
+(costing health points)</li>
+<li>gas: the character falls asleep or gets confused or starts
+hallucinating</li>
+<li>flashlight: the character is dazzled (becomes blind for a few ticks)</li>
+<li>earthquake: the ground shakes; the player character gets confused for a few
+ticks and may accidentally drop a few pack objects, and some stones may fall
+down from the ceiling</li>
+<li>teleport: the character is teleported to a random location in the current
+section</li>
+</ul>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

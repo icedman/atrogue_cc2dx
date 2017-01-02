@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Changes</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Changes</font></b></center>
+<p>Changes for version 0.3.0 (released 2010-02-22):<ul>
+<li>upgraded the license to GNU General Public License version 3 ("or
+newer")</li>
+<li>overhauled the entire source code; changed many small details and some
+bigger ones; introduced the "section" concept and the "dungeon department"
+concept; renamed the source code files level.[ch] to dungeon.[ch]</li>
+<li>introduced different roles in addition to "rogue", e.g. caveman, trader and
+wizard</li>
+<li>implemented several kinds of objects and obstacles, e.g. keys and
+doors</li>
+<li>implemented some keyboard commands, e.g. for door handling</li>
+<li>implemented several kinds of creatures, special attacks and dungeon
+traps</li>
+<li>added the documentation file docu/credits.html</li>
+<li>implemented a "scrollable texts" feature, especially to make the user
+interface for inventory handling more flexible</li>
+<li>implemented flexible lighting of rooms and individual
+squares</li></ul></p>
+<p>Changes for version 0.2.0 (released 2003-02-09; 172 KB):<ul>
+<li>split cfFlits into cfFlitsMov and cfFlitsAtt (creature.c, action.c)</li>
+<li>implemented ackRefresh (action.c)</li>
+<li>implemented cfPlantlike and fkVegetables (creature.c, object.c)</li>
+<li>implemented rods (in addition to wands and staves, for diversity)
+(object.c)</li>
+<li>implemented tokTowel - yum! (object.c, main.c)</li>
+<li>moved code for the keyboard command "apply" from main.c to the new file
+apply.c to get smaller source code files (main.c, apply.c)</li>
+<li>introduced support for configure scripts (for better portability
+etc.)</li></ul></p>
+<p>Changes for version 0.1.6 (released 2003-01-29; 161 KB):<ul>
+<li>let creatures step on (and glide over) sfGlazedFrost (action.c)</li>
+<li>introduced the concept of "storeys", so that each storey can consist of
+more than one level/map in future versions (level.c)</li>
+<li>wrote developer documentation about dungeon traps</li>
+<li>implemented tokShawlGas, tokShawlFood, tokDie</li>
+<li>let defeated creatures magically re-appear sometimes (by a delayed level
+event effect) (creature.c, level.c)</li></ul></p>
+<p>Changes for version 0.1.5 (released 2003-01-22; 156 KB):<ul>
+<li>improved the dungeon trap handling; implemented a "falling rocks" trap
+(level.c)</li>
+<li>use finer-grained object weight calculations in order to avoid "rounding"
+problems (object.c)</li>
+<li>implemented quarks, but no tea :-) (object.c, main.c)</li></ul></p>
+<p>Changes for version 0.1.4 (released 2003-01-15; 153 KB):<ul>
+<li>implemented mouse support (main.c)</li>
+<li>use nice little object descriptions instead of plain pronouns in some
+messages (object.c)</li>
+<li>implemented ccSpider creatures and shfSpins (creature.c)</li>
+<li>implemented the keyboard command "glimpse" (main.c)</li>
+<li>implemented a new object class "tools" (a generalization of the old class
+"lantern") (object.c)</li></ul></p>
+<p>Changes for version 0.1.3 (released 2003-01-08; 146 KB):<ul>
+<li>implemented rkSearch rings (object.c, main.c)</li>
+<li>implemented ccArcher and ccWorm creatures (creature.c)</li>
+<li>moved many general strings and helper functions from main.c to the new file
+stuff.c (main.c, stuff.c)</li>
+<li>improved the "artificial intelligence" of creatures (action.c)</li>
+<li>started the implementation of obstacles (generalization of chests)
+(level.c)</li>
+<li>implemented a "pit" trap (level.c, main.c)</li></ul></p>
+<p>Changes for version 0.1.2 (released 2002-12-31; 141 KB):<ul>
+<li>implemented the "count/number" argument for several commands (main.c)</li>
+<li>fixed the ordering of "put the player character into a level" and "populate
+a new level with creatures" (level.c)</li>
+<li>overhauled the whole project</li></ul></p>
+<p>Changes for version 0.1.1 (released 2001-07-05; 141 KB):<ul>
+<li>started animation implementation (animation.c, level.c)</li>
+<li>try to hoe walls resp. dig chests only for appropriate move-kinds
+(main.c)</li>
+<li>fixed a little bug in map_can_player_see() (level.c)</li>
+<li>put the tail of throw() into a new function creature_throw(); let creatures
+throw objects at the player character (main.c, creature.c, action.c)</li>
+<li>implemented remains in creature_lose_all_objects() (creature.c)</li>
+<li>implemented wkClub, changed wkMace attributes (object.c)</li>
+<li>implemented the command-line option "--colorhl=..." for color correction
+(init.c)</li>
+<li>increased the relative amount of wands/staves slightly and let more scrolls
+of identify appear (object.c)</li></ul></p>
+<p>Changes for version 0.1.0 (released 2001-06-25; 136 KB):<ul>
+<li>cleaned up special inventory handling for the player character (main.c,
+creature.c, level.c)</li>
+<li>cleaned up aggressivity and cfHumanoid handling; allowed wear-armor and
+wield-weapon for <i>any</i> humanoid creature, not just for the player
+character (creature.c)</li>
+<li>implemented the command "pick object" (main.c)</li>
+<li>implemented wkHarpoon, wkBoomerang and wkSword; fine-tuned the weapon
+minlevels and damages (main.c, object.c)</li>
+<li>let lantern description texts mention whether it's lit (object.c)</li>
+<li>introduced mfWall and mfChest (no real change yet, only preparing for later
+improvements) (level.c, creature.c, main.c)</li>
+<li>some little cleanup and fixes for identify() and do_cast_spell()
+(main.c)</li>
+<li>cleaned up object hoe-value calculation further (main.c)</li>
+<li>moved creature_act_all() and demo_act() into a new file "action.c", called
+them action_creatures() and action_rogue(), removed demo.[ch] and cleaned up
+that stuff (main.c, creature.c, demo.c, action.c)</li>
+<li>improved the AI ("artificial intelligence") of creatures (action.c,
+level.c)</li>
+<li>changed hit-chance calculations in creature_hit() - the game has become
+more difficult due to the improved AI... :-) (creature.c)</li></ul></p>
+<p>Changes for version 0.0.6 (released 2001-06-18; 131 KB):<ul>
+<li>implemented spell-casting (main.c, object.c)</li>
+<li>print more information when called with the "--version" option
+(init.c)</li>
+<li>made creatures wake up when someone throws something at them (main.c)</li>
+<li>fixed do_ask_for_string() (message.c)</li>
+<li>changed keyboard commands: "c" is now "cast spell", the former "call"
+command is now "X-c"; it seems we're approaching OOL state - out of letters...
+:-)</li>
+<li>changed kind and lifetime calculation in object_create_armor()
+(object.c)</li></ul></p>
+<p>Changes for version 0.0.5 (released 2001-06-15; 130 KB):<ul>
+<li>implemented further light-handling code (level.c)</li>
+<li>print the charge of wands, staves and scrolls in the inventory list
+(object.c)</li>
+<li>implemented creature_aggravate() and creature_allure_bees()
+(creature.c)</li>
+<li>introduced messages_maxcol (message.c)</li>
+<li>implemented more scroll kinds (main.c, object.c)</li>
+<li>changed level_hoe_wall() (level.c, main.c, object.c, creature.c)</li>
+<li>implemented general rebirth, dividing creatures and other special creature
+properties; changed creature_zap() (creature.c)</li>
+<li>cleaned up color handling (init.c)</li></ul></p>
+<p>Changes for version 0.0.4 (released 2001-06-11; 126 KB):<ul>
+<li>fixed cfSpecialHit problems (creature.c)</li>
+<li>stone description shall respect flag "ofKnownMaterial" (object.c)</li>
+<li>tweaked healing and scroll-reading (main.c)</li>
+<li>implemented magic spotlights; fixed some map handling bugs (level.c)</li>
+<li>fixed some throw() problems (main.c)</li>
+<li>changed dungeon trap handling (level.c, creature.c)</li></ul></p>
+<p>Changes for version 0.0.3 (released 2001-06-07; 123 KB):<ul>
+<li>fixed the command 'S' ("sleep") (main.c)</li>
+<li>improved messages (main.c, message.c, creature.c)</li>
+<li>fixed a weapon-handling bug in object_try_to_put_together()
+(object.c)</li></ul></p>
+<p>Changes for version 0.0.2 (released 2001-06-06; 123 KB):<ul>
+<li>improved messages (main.c, creature.c)</li>
+<li>added more developer documentation (docu/devel/)</li>
+<li>fixed some color problems (init.c)</li>
+<li>implemented more of the "special hits" (creature.c)</li>
+<li>improved inventory listing (main.c)</li></ul></p>
+<p>Initial release (version 0.0.1): 2001-05-31; 120 KB</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

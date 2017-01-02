@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Plans for Future Versions</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Plans for Future Versions</font></b></center>
+
+<p>Several interesting features have not yet been implemented. However, the
+current development focus shall not be on featuritis, but rather on fixing all
+bugs which appear and on correcting any game design mistakes before building
+more code on top of that, making it even worse.</p>
+
+<p>This page only lists some very general/global feature ideas. Tons of little
+ideas are documented within the source code with "IMPLEMENTME" marks (cf. the
+<a href="coding_style.html">coding style</a> documentation).</p>
+
+<p><ul>
+<li><b>Finetuning:</b> pretty much anything in atrogue depends on chance; but
+some of the probabilities (and aging amounts BTW) surely need some finetuning,
+e.g. should be higher or lower or depend more (or less) on gameplay difficulty,
+storey number etc.</li>
+<li><b>Shops:</b> could implement special "shop sections" where the player can
+buy objects, paying with gold found during the game.</li>
+<li><b>Other special sections:</b> could implement "bonus/malus" sections where
+the player can pick enchanted objects or has to fight against nasty creatures
+or "structural issues" of the section (flood; shrinking room). Such sections
+could appear e.g. when the player applies the AoY.</li>
+<li><b>Number of lives:</b> the player character can already be reborn; but
+maybe some players would like to get more lives, e.g. using a command-line
+option; rather allow the player to increase the number with in-game activities,
+maybe a special scroll or potion or a special trick with a stone table obstacle
+or quarks.</li>
+<li><b>Demo Mode:</b> the demo mode shall allow the player to sit back and
+watch the game playing automatically. Minimal code is already there, but
+implementing good heuristics for an <i>interesting</i> automatic gameplay will
+be hard, and this shouldn't begin before all other relevant features are
+implemented - otherwise the heuristics become wrong.</li>
+<li><b>Remote Mode:</b> this is a rather crude idea about external programs
+which could start atrogue remotely, rerouting the standard input/output and
+faking a human player. Think of it as some kind of "external demo mode". Very
+low on my to-do list...</li>
+</ul></p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

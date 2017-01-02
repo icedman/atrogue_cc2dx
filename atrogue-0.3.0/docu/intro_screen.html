@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Intro Screen</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for Users<br><font
+size="+1">Intro Screen</font></b></center>
+
+<p>When you start atrogue, you are at first presented with an introductory
+screen which allows you to set several preferences. Your screen might look like
+this:</p>
+
+<p><hr width="40%" align="left"></p>
+
+<p><pre>atrogue 0.3.0
+
+Preferences
+
+-&gt; Play: normal user-interaction
+   Difficulty: 2 (normal)
+   Role: rogue
+   Combat: 4  Magic: 3  Features: 5  Exploration: 2
+   Colors: yes
+   Animation: yes
+   Screen width: 80   height: 24
+   Section width: 79   height: 22
+   Quit
+
+To navigate, press Cursor-Up/Down or k/j.
+To edit, press Cursor-Left/Right or h/l.
+To start, navigate to the "Play" line and press Return.
+For information about atrogue, press V.</pre></p>
+
+<p><hr width="40%" align="left"></p>
+
+<p>So this is quite self-explanatory. :-) If you don't want to change any of
+the preferences, you can simply press the &lt;Return&gt; key immediately in
+order to enter the dungeon. To change a single-digit value, you can simply
+enter a digit instead of pressing the Cursor-Left/Right keys several times. To
+start playing when at any preference, press "P". To quit when at any
+preference, press "Q". To quickly navigate to a preference, press the
+respective lowercase letter, e.g. "m" for "Magic".</p>
+
+<p><b>Difficulty</b>: the gameplay difficulty ranges from "0 (very easy)" to "5
+(drive me crazy)" - and you can take the word "crazy" literally! If you play
+atrogue for the first time, leave the preference at "2 (normal)" and try the
+game; it's not intended that you can simply walk down through the dungeon and
+come back with the Amulet of Yendor the first time. Also, since many things in
+atrogue depend on chance, it's possible that the player character is killed in
+storey 5 during one game while you get below storey 10 quite easily the next
+time. If you can't get past the first few storeys, you might want to try a
+lower gameplay difficulty; but please note that some features are only
+available at higher difficulties. And you get deeper into the dungeon only if
+you play atrogue several times and gain some experience...</p>
+
+<p><b>Role</b>: the role (character class) specifies as what kind of character
+you want to play the game, e.g. caveman, rogue or wizard. The roles have very
+different characteristics, so this choice has a big influence on the gameplay.
+For example, the roles have different action speeds and different initial
+inventory packs. When you play as a wizard, a higher percentage of objects in
+the dungeon than usually are magic items, and more objects are enchanted or
+cursed, and you can handle certain magic events in better ways.</p>
+
+<p><b>Combat</b> (0..9): how much fighting you want to get. With a higher
+preference value, more enemies walk around in the dungeon, especially some
+creatures of rare, dangerous kinds. If you want to play a difficult "hack and
+slash" session, set this to 9.</p>
+
+<p><b>Magic</b> (0..9): the amount of magic objects and events you'd like to
+encounter generally.</p>
+
+<p><b>Features</b> (0..9): atrogue can provide many interesting features. With
+a higher preference value, the dungeon structure generally becomes more
+complex, more special effects occur, certain special object kinds exist, and it
+is more difficult to retrieve the Amulet of Yendor. If you want to play a
+"traditional" session like in the oldest Rogue-like games, set this value to 0
+and maybe also the "Magic" and "Exploration" values to 0.</p>
+
+<p><b>Exploration</b> (0..9): how much you like exploration, searching and
+special puzzles. With a higher preference value, more paths, objects and
+dungeon departments are hidden, and the dungeon is bigger and more
+complex.</p>
+
+<p><b>Screen width/height</b>: the game tries to figure out your text terminal
+size automatically. But this may fail, e.g. if the "curses" library doesn't
+provide the necessary functionality. This preference allows you to correct any
+problems manually (within limits) so that the <a href="map_screen.html">map</a>
+isn't drawn beyond your screen size. But please note that some <i>texts</i> may
+need more than 30 characters, especially in an inventory listing; and the <a
+href="map_screen.html#statistics">statistics line</a> may need more than 50
+characters; it's a good idea to play this game on a screen which is at least 60
+characters wide.</p>
+
+<p><b>Section width/height</b>: the maximum size of dungeon sections. All
+sections stay within these limits, with the exception of a few special sections
+which represent wide "landscapes" that are much bigger. The game never uses the
+rightmost column of a text terminal, because that could cause trouble on some
+terminals; and the two bottom lines are used for messages and statistics, not
+for section maps. So if you don't like scrolling maps during gameplay, make
+sure that the section width is lower than the screen width and the section
+height is at least 2 lower than the screen height.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

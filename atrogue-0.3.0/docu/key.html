@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Keyboard Commands</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for Users<br><font
+size="+1">Keyboard Commands</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>You play atrogue by entering keyboard commands. Most commands consist of a
+single key, some commands require additional input like an <a
+href="inventory.html">object inventory</a> letter or a direction key. For some
+commands, you can give a "count/number" parameter in advance by entering the
+command "C", telling atrogue e.g. how many darts you want to throw or for how
+many turns you want to rest.</p>
+
+<p><a name="movement"></a><b>Movement Keys</b></p>
+
+<p>The most important keyboard commands concern moving around in the dungeon.
+You can move in eight directions; but diagonal moves aren't always possible,
+e.g. when you want to enter or leave a tunnel - the doorways are quite narrow.
+There are three kinds of movement commands: you can move a single step or until
+you get "next to something of interest" or until you are stopped by e.g.
+running into a wall. Additionally, you can move a certain number of steps by
+combining the command "C" and a single-step movement key.</p>
+
+<p><b>Single-step moves</b> can be made by pressing the following keys. The
+letters are the same as in some other Rogue-like games; to make comfortable use
+of the number keys, activate the keypad. For horizontal and vertical movement,
+you can also use the cursor keys, but it seems that these don't work with all
+terminals.</p>
+
+<p><pre>       k, 8
+        |
+  y, 7  |  u, 9
+      \ | /
+       \|/
+h, 4 ---+--- l, 6
+       /|\
+      / | \
+  b, 1  |  n, 3
+        |
+       j, 2</pre></p>
+
+<p>To move until you're <b>stopped by something</b>, use the above letter keys
+(not number or cursor keys) in combination with the &lt;Shift&gt; key. To move
+until "<b>next to something</b> of interest", use &lt;Control&gt; instead of
+&lt;Shift&gt;. (The exact behavior of these kinds of moves will change in later
+versions - they don't yet work as intended.)</p>
+
+<p>To <b>fight a creature</b>, move in its direction as if you wanted to run
+into it. To <b>pick an object</b> which is lying around in the dungeon, move on
+its location.</p>
+
+<p><a name="other"></a><b>Other Keys</b></p>
+
+<p>The following other keyboard commands can be used; they are roughly sorted
+alphabetically; uppercase and lowercase letters are different. For some
+commands, you can give a "count/number" parameter in advance with the command
+"C", as explained below. Some commands ask you for a direction; you can then
+use any of the above movement keys to specify the direction. Some commands
+(e.g. throwing) concern an object from your pack; in such cases, you are asked
+for a letter representing an inventory object; please read the <a
+href="inventory.html">inventory handling</a> documentation for details. You can
+cancel any command which requires additional information by pressing the
+&lt;Escape&gt; key; if this needs a longer time on your terminal to take
+effect, try Ctrl-e instead.</p>
+
+<p><ul>
+
+<li>a - apply
+<br>apply a weapon or tool from your pack in a special way or invoke the power
+of a magic object, or un-apply a permanently applied tool such as a cape. You
+can use this e.g. to light a lantern.</li>
+
+<li>c - close a door
+<br>close a nearby door in horizontal or vertical direction; you can't close a
+door which is blocked, e.g. by a creature.</li>
+
+<li>C - give a count/number
+<br>give a count/number argument in advance for another command which can use
+such an argument (movement, drop, pick, rest, sleep, throw<!-- and, secretly:
+apply case :-) -->); the current count appears in the <a
+href="map_screen.html#statistics">statistics line</a> of the <a
+href="map_screen.html">map screen</a>.</li>
+
+<li>d - drop
+<br>drop an object from your pack; you can't immediately drop armor you're
+currently wearing (use the command "T" to take it off first) or a ring on hand
+(use the command "R" to remove it first) or a permanently applied tool (such as
+a cape; use the command "a" to un-apply it first). - You can use the command
+"C" in advance, e.g. if the object consists of five stones and you want to drop
+only one or two of them.</li>
+
+<li>e - eat food
+<br>eat some food from your pack; you should do this when the player character
+is hungry or weak or (at the latest!) starts fainting.</li>
+
+<li>E - explain/help
+<br>display a little help message; if you don't know what you should do next in
+a certain situation during the game, try this command. Sometimes you get a
+specific help message, otherwise a rather general information about the next
+longer-term goal you should try to reach.</li>
+
+<li>g - glimpse
+<br>glimpse at something that is shown on the <a href="map_screen.html">dungeon
+map</a>; this allows you to select a location on the map (e.g. a creature or
+object symbol) and to get a descriptive message about what's there. If the <a
+href="config.html">compile-time configuration option</a> OPTION_TEXTMODEMOUSE
+is enabled, you can get such messages more easily by just clicking the location
+with the mouse.</li>
+
+<li>i - show inventory list
+<br>display a complete inventory list of all the objects you are carrying,
+sorted by object letters; please read the <a href="inventory.html">inventory
+handling</a> and <a href="#st">scrollable texts</a> documentation for
+details.</li>
+
+<li>I - show special inventory list
+<br>display a special part of the inventory list; you are asked what shall be
+listed; press a key: "&gt;" provides the usual complete inventory, sorted by
+object letters; "&lt;" provides the complete inventory, sorted by object
+classes; "g" counts all pieces of gold in the inventory; "u" provides a list of
+all unpaid objects, useful in shops; or you can enter a character which is used
+in the <a href="map_screen.html">dungeon map</a> for an object class, e.g. "?"
+for magic scrolls. For more information, please read the <a
+href="inventory.html">inventory handling</a> and <a href="#st">scrollable
+texts</a> documentation.</li>
+
+<li>m - move onto
+<br>move on a location without picking an object which is lying there; you can
+also use this command to move without accidentally hitting a creature - useful
+if you can't see whether a creature is on the location and you want to avoid
+fighting.</li>
+
+<li>o - open a door
+<br>open a nearby door in horizontal or vertical direction; if the door is
+locked, you need a matching key to open it - or some other means.</li>
+
+<li>p - pick up an object
+<br>pick up the object which is lying on the ground at the current location;
+this is useful e.g. if you used the command "m" to move onto a location and now
+decide that you want to pick the object which is lying there. - You can use the
+command "C" in advance, e.g. if the object consists of five darts and you want
+to pick only one or two of them.</li>
+
+<li>P - put a ring on hand
+<br>put a magic ring from your pack on the left or right hand</li>
+
+<li>q - quaff a potion
+<br>quaff a magic potion from your pack</li>
+
+<li>Q - quit
+<br>quit atrogue; the current dungeon, your pack and the information about
+magic objects are lost and forgotten; when you start atrogue the next time, you
+get a different dungeon...</li>
+
+<li>r - read a scroll
+<br>read a magic scroll from your pack</li>
+
+<li>R - remove a ring
+<br>remove a magic ring from the left or right hand; you can't remove
+<i>cursed</i> rings!</li>
+
+<li>s - search
+<br>search for hidden doorways and other things in the neighborhood</li>
+
+<li>S - sleep
+<br>fall asleep on your current location for a single tick. You can use the
+command "C" in advance if you want to sleep for more than one tick. You might
+sleep for a little longer than you expected, and you don't necessarily wake up
+when a creature arrives near you; so sleeping is somewhat "dangerous", but you
+heal faster than when simply resting.</li>
+
+<li>t - throw
+<br>throw an object from your pack in a certain direction; you can't
+immediately throw armor you're currently wearing (use the command "T" to take
+it off first) or a ring on hand (use the command "R" to remove it first) or a
+permanently applied tool (such as a cape; use the command "a" to un-apply it
+first). - You can use the command "C" in advance, e.g. if the object consists
+of fifty pieces of gold and you want to throw only ten of them.</li>
+
+<li>T - take off armor
+<br>take off the armor you're currrently wearing; you can't take off
+<i>cursed</i> armor!</li>
+
+<li>v - version information
+<br>show a short message about the current version of atrogue; for more, use
+the command "V" instead.</li>
+
+<li>V - extended version/software information
+<br>show verbose information about the current version of atrogue, the license,
+possible other software (e.g. the version of the "ncurses" library, if you use
+that) etc.</li>
+
+<li>w - wield a weapon
+<br>wield (pull out) a weapon from your pack; you can be wielding only one
+weapon at a time</li>
+
+<li>W - wear armor
+<br>wear some piece of armor from your pack; you can be wearing only one piece
+of armor at a time</li>
+
+<li>x - unwield a weapon
+<br>unwield the weapon you're currently wielding; you can't unwield
+<i>cursed</i> weapons!</li>
+
+<li>X - extended command
+<br>perform one of the following special commands:
+<ul>
+<li>"c" - cast a spell; that is, recite the title of a scroll you found some
+time during the game but don't have anymore. Since there's no helping magic
+energy of a scroll here, this costs you more magic energy than reading a scroll
+with the command "r". Not all scroll titles can be used to cast a spell, and
+you might currently not have enough energy to cast certain spells. How much
+energy a spell costs also depends on your current state; the necessary magic
+energy for each spell is shown in the list of spells you get when using this
+command. The list is implemented as a <a href="#st">scrollable text</a>.</li>
+<li>"C" - lets you <i>call</i> a magic object from your pack, i.e. give it a
+name; you can use this to write up a guess about the effect of a magic object
+which you could not yet identify</li>
+<li>"m" - show everything you already found out about <i>magic</i> objects; the
+list is implemented as a <a href="#st">scrollable text</a></li>
+<li>"M" - turn <i>mouse</i> click recognition on/off (if the <a
+href="config.html">compile-time configuration option</a> OPTION_TEXTMODEMOUSE
+is enabled)</li>
+<li>"s" - <i>save</i> a screenshot of the current map into a text file named
+".atrogue-screenshot-&lt;number&gt;" in your home directory</li>
+<li>"+"/"-" - increase/decrease the interval between animation steps (if the <a
+href="config.html">compile-time configuration option</a> OPTION_ANIMATION is
+enabled)</li>
+</ul></li>
+
+<li>z - zap with a wand, staff or rod
+<br>zap with a magic wand (metal), staff (wood) or rod (prismatic glass) from
+your pack in a certain direction</li>
+
+<li>. (dot) or 5 - rest on location
+<br>rest on your current location for a single tick. You can use the command
+"C" in advance if you want to rest for more than one tick; resting is
+interrupted e.g. when a creature arrives near you. The key "5" is useful when
+you move via keypad.</li>
+
+<li>&gt; (the "greater than" character) - climb down one storey; descend
+<br>climb down to the next storey if you're standing on a "downstairs" location
+(marked on the map with the same character) and aren't levitated</li>
+
+<li>&lt; (the "less than" character) - climb up one storey; ascend
+<br>climb up to the previous storey if you're standing on an "upstairs"
+location (marked on the map with the same character); such stairs might only
+appear if you have got the Amulet of Yendor!</li>
+
+<li>? (question mark) - show a help screen
+<br>show a help screen which lists all available keyboard commands with short
+explanations; this is implemented as a <a href="#st">scrollable text</a>.</li>
+
+<li>Ctrl-d - kick
+<br>kick a nearby creature, a locked door or other obstacle or object</li>
+
+<li>Ctrl-p - previous message
+<br>show the previous message; you can read older messages by pressing this key
+combination several times before a new message appears.</li>
+
+<li>Ctrl-w - wish
+<br>wish for rescue in a seemingly hopeless situation; you can summon the magic
+of the dungeon so that it fulfills a few rare wishes; what you can wish for
+depends on the difficulty preference and your experience and other factors; in
+general, you can wish for a teleportation or for certain objects. Be warned
+that you have to pay a price of some kind for each fulfilled wish; for example:
+you may lose important objects from your pack, or they become cursed or age
+more quickly, or your luck may deteriorate, or you are teleported back into an
+earlier storey or a big maze, or you are teleported repeatedly after a few
+actions, or you get chained to an iron ball which slows down your motions. And
+don't try to leave a shop with unpaid items this way...</li>
+
+<li>Ctrl-x - base attributes
+<br>show a screen with some base attributes of the player character such as
+current/initial role, conduct and statistics. This screen also provides a
+template for the <a href="arg.html">command-line option</a>
+"--pref=<i>string</i>"; you can simply copy-paste it (maybe you have to toggle
+the mouse handling mode with the key combination "X"-"M" to enable copy-paste
+before you enter this screen).</li>
+
+<li>Finally, you can enter any character which represents a certain class of
+objects to view a partial inventory which only lists objects of that class; the
+characters are the same as those used in the <a href="map_screen.html">dungeon
+map</a>. This shortcut only doesn't work for magic scrolls here, because the
+key "?" shows a help screen; use the key sequence "I?" instead.</li>
+
+</ul></p>
+
+<p><a name="missing"></a><b>Missing Commands</b></p>
+
+<p>The following commands have not yet been implemented in this release of
+atrogue; they will be available in a future version...</p>
+
+<p><ul>
+<li>Save the current state of the game into a file so that you can resume the
+game (e.g. some days or a week) later; this can't yet be implemented because
+the final set of features (many of which have to be considered when saving a
+game) of atrogue isn't yet clear enough.</li>
+</ul></p>
+
+<p><a name="st"></a><b>Scrollable Texts</b></p>
+
+<p>During gameplay, you are sometimes provided with longer texts, especially
+the inventory listings. These are implemented as "scrollable texts": if a text
+is so long that it doesn't fit on your screen, you can scroll it up and down.
+The bottom line explains which keys can be pressed and which effect they
+have.</p>
+
+<p>You can scroll with the Cursor-up/down keys, if they work on your terminal.
+You can also scroll with the usual j/k keys, unless you are asked to select a
+letter, e.g. for an inventory item - in such cases, use the key combinations
+with Shift or Control or the digits for scrolling.</p>
+
+<p>As usually, you can always cancel the current operation with the Escape and
+Ctrl-e keys.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

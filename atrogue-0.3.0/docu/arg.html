@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Command-Line Options</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for Users<br><font
+size="+1">Command-Line Options</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>atrogue allows you to specify several settings on the command-line when you
+start the program. Some of these are only available if the respective <a
+href="config.html">compile-time configuration options</a> have been enabled
+before.</p>
+
+<p><a name="option"></a><b>The Command-Line Options</b></p>
+
+<p><ul>
+<li><b>--animation=off</b> - disable animation</li>
+<li><b>--animation=on</b> - enable animation</li>
+<li><b>--colors=off</b> - disable colors for the map display</li>
+<li><b>--colors=on</b> - enable colors for the map display (default); this is
+only possible if you have enabled the respective <a
+href="config.html">compile-time configuration option</a> OPTION_COLORS. If you
+enable colors but your terminal does not support them, atrogue still works, it
+just doesn't use colors.</li>
+<li><b>--colorhl=<i>value</i></b> - when you've enabled color support, some
+colors can look darker than they should; for example, a yellow obstacle symbol
+(<font color="yellow">{</font>) in the <a href="map_screen.html">dungeon
+map</a> might look brown with some VGA graphics cards. To avoid that, use this
+"highlighting" option which sets the yellow color to a "real" yellow (use
+<i>yellow</i> for <i>value</i>) or highlight all the other colors too (use
+<i>any</i> for <i>value</i>). If you don't like this highlighting, don't use
+this option at all or use <i>none</i> for <i>value</i> (default).</li>
+<li><b>--log=off</b> - disable writing game messages into a log file
+(default)</li>
+<li><b>--log=on</b> - enable writing all game messages into a log file; the log
+file is called ".atrogue-log" and lies in your home directory. (If the
+environment variable "HOME" isn't set, the log file lies in the current
+directory instead.) Do not play several atrogue games simultaneously with
+logging enabled - the messages would intermix in the log file!</li>
+<li><b>--pref=<i>string</i></b> - the <i>string</i> presets options which
+appear on the <a href="intro_screen.html">intro screen</a>; this way, you need
+not change the preferences manually whenever you start a new game. A template
+<i>string</i> with the current preferences can be found on the Base Attributes
+screen during gameplay; use the <a href="key.html">keyboard command</a> Ctrl-x
+to get there. The string has a simple, quite obvious structure: a letter
+indicates which preference shall be set, and the following letter or number
+specifies the desired value. This example shows default preferences:
+"--pref=d2rrc4m3f5e2".</li>
+<li><b>--scr-width=<i>number</i></b> - the width of your terminal screen
+(number of columns); you can use this if atrogue can't figure out the correct
+screen size by itself</li>
+<li><b>--scr-height=<i>number</i></b> - the height of your terminal screen
+(number of rows); you can use this if atrogue can't figure out the correct
+screen size by itself</li>
+<li><b>--sec-width=<i>number</i></b> - the maximum width of dungeon sections;
+currently, values from 60 to 120 are allowed here; if you don't use this
+option, atrogue tries to adapt the section width to the width of your terminal
+automatically when it starts.</li>
+<li><b>--sec-height=<i>number</i></b> - the maximum height of dungeon sections;
+currently, values from 20 to 40 are allowed here; if you don't use this option,
+atrogue tries to adapt the section height to the height of your terminal
+automatically when it starts.</li>
+<li><b>--version</b> - print a short version information and quit</li>
+</ul></p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

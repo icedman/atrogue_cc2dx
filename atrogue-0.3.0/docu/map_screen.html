@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] The Map Screen</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for Users<br><font
+size="+1">The Map Screen</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>The map screen is shown most of the time during the game. It consists of
+three parts: the dungeon map, a message line and a statistics/state line.</p>
+
+<p><a name="map"></a><b>The Dungeon Map</b></p>
+
+<p>The dungeon map shows the regions of the current section which you already
+explored and all creatures and objects which you can currently perceive. This
+little example shows two rooms which are connected by a tunnel:</p>
+
+<!-- <p><hr width="40%" align="left"></p> -->
+
+<p><pre>                -------- --
+                |       > |
+                |         +
+           #####          |
+           #    -----------
+ ---.------#
+ |........|#
+ |....<font color="red">H</font>..<font color="green">:</font><font
+color="red">@</font>#
+ |........|
+ ----------</pre></p>
+
+<!-- <p><hr width="40%" align="left"></p> -->
+
+<p>The dungeon consists of storeys. As you proceed downward, the storeys become
+increasingly difficult and diverse. Each storey consists of one or more
+separate big rectangular areas which are called sections. A section usually
+consists of several small rectangular rooms which provide objects and are
+populated by creatures. The rooms are connected by tunnels.</p>
+
+<p>The <b>text characters</b> in the map have the following meaning; of course
+we don't reveal everything - there should be something left for you to
+discover! :-)</p>
+
+<p><ul>
+<li>@ - the player character; your current position in the section</li>
+<li>-| - horizontal and vertical walls of a room; an open door in the
+walls</li>
+<li>. - a lit location inside the room you're currently in</li>
+<li>+ - a closed or locked door in the walls of a room</li>
+<li># - a tunnel</li>
+<li>&gt; - a downward staircase to the next storey</li>
+<li>&lt; - an upward staircase to the previous storey</li>
+<li>~ - might be dangerous ground; step on it with care</li>
+<li>{ - an obstacle; usually in yellow color, if you have enabled color
+support; e.g. a chest which may contain an interesting object; some obstacles
+are represented by special symbols, e.g. a closed door by "+" and a boulder by
+"`"</li>
+</ul></p>
+
+<p>There can also be <b>creatures</b>, which are mostly represented by letters;
+a lowercase letter usually means that the creature currently doesn't act, e.g.
+because it's sleeping. If you have enabled color support, most creatures appear
+in red color. As you get deeper into the dungeon, you meet more and stronger
+creatures and ones with special abilities which make your life harder.</p>
+
+<p>There are also text characters which represent <b>objects</b> lying around
+in the dungeon. If you have enabled color support, most objects appear in green
+color. As you get deeper into the dungeon, you can find "better" objects - more
+solid armor, stronger magic potions and scrolls etc.</p>
+
+<p><ul>
+<li>[ - armor</li>
+<li>) - weapon</li>
+<li>: - food</li>
+<li>% - gold</li>
+<li>* - stone</li>
+<li>&amp; - tool (e.g. lantern)</li>
+<li>! - magic potion</li>
+<li>/ - magic wand, staff or rod</li>
+<li>? - magic scroll</li>
+<li>= - magic ring</li>
+<li>, - the Amulet of Yendor (genuine or fake)</li>
+</ul></p>
+
+<p><a name="message"></a><b>The Message Line</b></p>
+
+<p>The message line below the dungeon map contains messages (what else:-) which
+appear during the game, e.g. when you pick up an object or when a creature
+hits. If you read "-more-" at the end of this line, there are more messages
+available which didn't fit into the line; press &lt;Space&gt; to get them.</p>
+
+<p><a name="statistics"></a><b>The Statistics/State Line</b></p>
+
+<p>The statistics/state line contains lots of information about game statistics
+and your current state. An example:
+
+<p><hr width="40%" align="left"></p>
+<p><pre>L:c1  H:n12/12 S:16/16 E:0  A:3  M:15&0  T:9 C:3 LN</pre></p>
+<p><hr width="40%" align="left"></p>
+
+<p>The individual parts of this line have the following meaning:</p>
+
+<p><ul>
+<li>L (level, storey): a lowercase letter indicating the gameplay difficulty
+you selected in the intro screen ("a".."f"; "c" means "normal") and the number
+of the current storey</li>
+<li>H (health): a lowercase letter indicating how many actions you can do yet,
+and your current/maximal health; "n" means normal, "h" hungry, "w" weak, "f"
+fainting and "s" starved; if it's not "n", you should eat some food; you can
+act for about 1000 ticks before getting hungry, but less if you do strenous
+things like fighting or searching. The health e.g. decreases when you are hit
+by a creature and grows to the maximum while you're healing (e.g. when you
+rest); watch this carefully if you don't wanna die surprisingly! :-)</li>
+<li>S (strength): your current/maximum strength values<!-- roughly includes
+"constitution" --></li>
+<li>E (experience): your current experience; this roughly combines attributes
+like dexterity, intelligence, wisdom and charisma known from other games</li>
+<li>A (armor): if you're wearing armor, it holds some damage off when you're
+hit; this part shows "-" if you aren't wearing armor, "?" if you didn't yet
+find out how good your armor is or a number indicating how much damage the
+armor can hold off.</li>
+<li>M: magic energy and experience; you can perform certain magic actions only
+if you have enough magic energy! If you need more energy, quaff some yummy
+potions...</li>
+<li>T (ticks, time): how many ticks have passed since the beginning of the
+game; in the magic dungeon, time is measured in discrete ticks, the continuous
+"real" time is meaningless - so you can think about your next action without
+time pressure... Creatures usually act once per dungeon tick; but they can act
+more often if they are small, supple or hasted, and less often if they are
+slowed or confused or held.</li>
+<li>C (count): this only appears if you have entered a count/number argument
+with the <a href="key.html">keyboard command</a> "C"</li>
+</ul></p>
+
+<p>To the right of these, some letters might appear, describing the player
+character's current state further:</p>
+
+<p><ul>
+<li>B - blind</li>
+<li>C - confused (the same letter as for the count/number argument, but this
+shouldn't confuse you:-)</li>
+<li>F - frozen, you can't act</li>
+<li>H - hasted</li>
+<li>I - invisible</li>
+<li>L - levitated</li>
+<li>N - napping (sleeping, you can't act)</li>
+<li>S - slowed</li>
+</ul></p>
+
+<p>The maximum health and strength values increase as you gain experience
+during the game.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

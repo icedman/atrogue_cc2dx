@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Inventory Handling</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for Users<br><font
+size="+1">Inventory Handling</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>The <b>inventory</b> is a list of all the objects you are currently carrying
+in your <b>pack</b>. It can contain the objects you had when you entered the
+dungeon as well as any object you picked up somewhere during the game. You can
+read the complete inventory with the <a href="key.html">keyboard command</a>
+"i". You can read special, partial inventories with "I", or e.g. with a dungeon
+map symbol like "/" for a list of wands. If you have enabled color support,
+some objects are listed in certain colors: armor in green, weapons in yellow
+and magic objects in blue color. Inventories are provided as <a
+href="key.html#st">scrollable texts</a>.</p>
+
+<p>When you keep picking objects while moving around, you become slower and
+your pack finally gets "full"; at this point, you have to decide whether you
+leave an object lying on the ground or rather drop one or more objects from
+your pack and pick the other; to pick a "heavy" object, you may have to drop
+several "light" objects.</p>
+
+<p>All objects have a limited lifetime. If you use them intensively or carry
+them around for a long time, they might fall to pieces - and magic objects
+might lose their charges.</p>
+
+<p><a name="example"></a><b>An Inventory Example</b></p>
+
+<p>When you just entered the dungeon, your inventory might look like this:</p>
+<!-- <p><hr width="40%" align="left"></p> -->
+<p><pre>Complete Inventory
+
+] (a) ring mail (+1; d=3; being worn)
+) (b) a mace (+2; d=7; in hand)
+) (c) a bow (+0; d=1)
+) (d) 25 arrows (+1; d=3)</pre></p>
+
+<!-- <p><hr width="40%" align="left"></p> -->
+
+<p>Each inventory line shows one object and consists of</p>
+
+<p><ul>
+<li>a character representing the class of the object (the same characters are
+used in the <a href="map_screen.html">dungeon map</a>);</li>
+<li>a lowercase letter which you enter when you are asked for an object;</li>
+<li>a short description; the amount of information depends on how much you
+already have discovered about that kind of objects and the object itself. To
+find out more about an object (especially about <i>magic</i> objects), you can
+try to find a <i>scroll of identify</i> somewhere in the dungeon and read it
+with the <a href="key.html">keyboard command</a> "r".
+</ul></p>
+
+<p>The information in parentheses means:</p>
+
+<p><ul>
+<li>the <b>enchantment</b> of the object, e.g. "+1" (the object is enchanted,
+and the extent of enchantment is 1), "1" (the extent of enchantment is 1, but
+you don't know whether it's enchanted or cursed), "ench" (the object is
+enchanted or neutral) or "curs" (the object is cursed);</li>
+<li>how much <b>damage</b> the object might hold off you when you're hit
+(armor, being worn), or how much damage the object might do to other creatures
+when you wield or throw it (other object kinds), e.g. "d=3";</li>
+<li>the <b>number of charges</b> of a wand, staff, rod or scroll; that roughly
+says how often you can use the magic power of the object yet, e.g. "c=2".</li>
+<li>additional information about whether you currently wear the piece of armor,
+wield the weapon, have put the ring on hand etc.</li>
+<li>for magic objects: maybe also the kind of the object (if you identified it;
+e.g. <i>sleep</i> for a wand of sleep) and how you called it (if you used the
+<a href="key.html">keyboard command</a> combination "X"-"C").</li>
+</ul></p>
+
+<p><a name="selection"></a><b>Object Selection</b></p>
+
+<p>For some <a href="key.html">keyboard commands</a>, you have to provide
+additional information. For example, when you use the command "t" to throw an
+object, you are asked "throw what?". At this point, you can directly enter a
+lowercase letter for the object you want to throw.</p>
+
+<p>If you don't remember the letter, you can instead press "&gt;" in order to
+view a list of all inventory entries which can be used with the given command;
+press "&lt;" instead for a list which is sorted by object classes. - For
+throwing, objects of any class are allowed; for reading, only scrolls are
+allowed; etc. If only certain classes are allowed, the question is followed by
+a list of characters representing the allowed classes in quotation marks.
+Example: <i>zap with what? "/"</i></p>
+
+<p>If you know in advance that you want to select an object of a certain class,
+you can enter the character which represents that class of objects (the same
+characters are used in the <a href="map_screen.html">dungeon map</a> and in the
+leftmost column of the inventory list) to view a partial inventory which only
+contains objects of that class. If you hear a beep instead of getting the
+inventory, this means that you don't have any object of that class. (Some
+terminals can't produce the beep; in this case, you don't get any effect.)</p>
+
+<p>When you view the inventory list, you can enter the lowercase letter to
+select an object directly; you can also press &lt;Escape&gt; in order to get
+back to the <a href="map_screen.html">map screen</a> first and enter the letter
+(or do anything else) there.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

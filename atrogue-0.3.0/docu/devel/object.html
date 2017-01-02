@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Objects</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Objects</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>Most objects (items) start their existence lying around in the dungeon where
+they can be picked up by creatures. When a creature is created, it can already
+have some objects in its initial pack.</p>
+
+<p><a name="data"></a><b>Internal Object Data</b></p>
+
+<p>Internally, objects are represented by C structures. Every object structure
+contains information like the following:</p>
+
+<p><ul>
+<li>object class (e.g. armor, weapon, scroll)</li>
+<li>object kind (specific kind of armor, weapon, ... depending on class)</li>
+<li>flags (properties, current state and player's knowledge of object)</li>
+<li>quantity (number of "things" in this object, e.g. <i>25</i> arrows)</li>
+<li>damage (how much damage an armor object holds off its user, how much damage
+any other class of object does when wielded or thrown)</li>
+<li>enchantment (extent of enchantment, and whether it's enchanted or
+cursed)</li>
+<li>lifetime (how long the object can exist yet; this is decreased by several
+<i>aging amounts</i> every <a href="tick.html">dungeon clock tick</a> depending
+on whether it's lying around in the dungeon, being carried, being used, being
+hit, ...; when the lifetime reaches 0, the object falls to pieces)</li>
+<li>coordinates (only valid if lying around in a dungeon section)</li>
+</ul></p>
+
+<p><a name="ring"></a><b>Ring Handling</b></p>
+
+<p>Rings can lie around in the dungeon or be carried by creatures just like any
+other object. But there's one special thing about them: the player character
+can put rings on his hands - at most two (one per hand) at any time. All rings
+work "permanently" when they're put on hand, but different kinds of rings have
+completely different effects. So ring-handling code can be found in many places
+of the source code, mostly in the files main.c and creature.c.</p>
+
+<p>To find out whether a certain ring effect should occur, the game checks both
+hands, and (most times) the enchantments of the rings of the kind in question
+are summed up. This way the player can e.g. try to cancel out the negative
+effect of a cursed ring by putting an enchanted ring of the same kind on the
+other hand.</p>
+
+<p><a name="tool"></a><b>Tool Handling</b></p>
+
+<p>Tools are a class of various object kinds which don't fit nicely in any
+other class. Many tool objects can be <i>applied</i> in certain ways. For
+example, a lantern can be lit, boots can be put on feet, and a camera can be
+applied to produce useful photographs.</p>
+
+<p><a name="unique"></a><b>Unique Objects</b></p>
+
+<p>A few objects are "unique": the player cannot have several of the same kind
+at the same time. The most important of these objects is the Amulet of Yendor
+("AoY").</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

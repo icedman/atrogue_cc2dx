@@ -1,0 +1,57 @@
+# atrogue/configure.base - package configuration base
+# This file is part of atrogue, a "Rogue-like game" created by Arne Thomassen;
+# atrogue is basically released under certain versions of the GNU General
+# Public License and WITHOUT ANY WARRANTY.
+# Read the file COPYING for license details, README for game information.
+# Copyright (C) 2003-2010 Arne Thomassen <arne@arne-thomassen.de>
+
+# Run this file through itchconfig (<http://itchconfig.sourceforge.net/>) to
+# generate a configure script.
+
+IC_BEGIN(atrogue, 0.3.0, 24, Makefile, .config)
+IC_ENSURE_LAUNCHDIR([object.c])
+IC_MAKEFILE_PRESERVE
+
+IC_BINARY_CREATE(atrogue)
+IC_BINARY_ADD_SOURCE(atrogue, C, [action.c action.h animation.h creature.c creature.h init.c init.h dungeon.c dungeon.h main.c message.c message.h object.c object.h random.c random.h stat.c stat.h stuff.c stuff.h])
+
+IC_SUBSTITUTE_BEGIN
+IC_SUBSTITUTE(USING_CONFIGURE, 1)
+IC_SUBSTITUTE(OPTION_RNG, [/dev/urandom]) # FIXME!
+IC_SUBSTITUTE(CONFIG_DEMO, 0)
+IC_SUBSTITUTE(CONFIG_REMOTE, 0)
+IC_SUBSTITUTE(CONFIG_GRAPHICS, 0)
+IC_SUBSTITUTE(CONFIG_DEBUG, 0)
+IC_OPTION_ENABLE(ncurses, 1, [ncurses])
+IC_OPTION_ENABLE(textmodemouse, 0, [text-mode mouse])
+IC_OPTION_ENABLE(colors, 1, [color support])
+IC_OPTION_SET(animation, 0, [animation speed (msecs)])
+IC_SUBSTITUTE_END
+
+#IC_IF_IDENTIFIER_SET(OPTION_ANIMATION)
+#  IC_BINARY_ADD_SOURCE(atrogue, C, [animation.c])
+#IC_ENDIF_IDENTIFIER_SET
+
+IC_IF_OPTION_ENABLED(ncurses)
+  IC_BINARY_ADD_LIBRARY(atrogue, ncurses)
+IC_ELSE_OPTION_ENABLED
+  IC_BINARY_ADD_LIBRARY(atrogue, curses)
+IC_ENDIF_OPTION_ENABLED
+
+# Check for header files
+IC_C_HEADERS_STDC
+IC_C_HEADERS([errno.h fcntl.h memory.h stddef.h stdlib.h string.h strings.h sys/stat.h sys/time.h sys/types.h unistd.h ncurses.h])
+
+# Check for typedefs, structures and compiler characteristics
+IC_C_CONST
+IC_C_INLINE
+IC_C_TYPES([pid_t size_t])
+
+# Check for library functions
+IC_C_FUNCTIONS([bcopy bzero gettimeofday memcpy memset select strchr])
+
+# What to install with "make install"
+IC_INSTALL_CREATE(bin, , [atrogue])
+IC_INSTALL_CREATE(man, , [docu/atrogue.6])
+
+IC_END

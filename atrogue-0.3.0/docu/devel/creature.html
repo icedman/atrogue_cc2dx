@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Creatures</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Creatures</font></b></center>
+
+<p><a name="intro"></a><b>Introduction</b></p>
+
+<p>Many creatures populate the dungeon. The number and kinds of creatures
+depend on the respective storey, their number also depends on gameplay
+difficulty and dungeon section size and other preferences. We don't call them
+"monsters" in this game because that notion might imply something negative and
+some creatures can be friends of the player character...</p>
+
+<p><a name="data"></a><b>Internal Creature Data</b></p>
+
+<p>Internally, creatures are represented by C data structures. Every creature
+structure contains the following information:</p>
+
+<p><ul>
+<li>creature class (e.g. bat, kestrel)</li>
+<li>flags (properties, abilities)</li>
+<li>current coordinates (only valid if the "cfDead" flag isn't set)</li>
+<li>target coordinates (where the creature tries to move)</li>
+<li>current room number (related to current coordinates)</li>
+<li>health, strength, experience, direction of last move</li>
+<li>timers for blindness, confusion, hallucination, slowed/hasted, sleep,
+levitation, being held and being frozen (decremented once per dungeon clock
+tick)</li>
+<li>a pointer to the list of objects the creature is carrying</li>
+<li>aggressivity (increases when the creature is hit, decreases when the
+creature sleeps)</li>
+<li>a "normal" ASCII character for map display</li>
+<li>a "disguising" ASCII character for map display (used for sleeping,
+object-imitating creatures)</li>
+</ul></p>
+
+<p><a name="player"></a><b>The Player Character</b></p>
+
+<p>The player character is basically a creature like all the others and thus is
+represented by one instance of the C data structure explained above. However,
+the game has to maintain some more information, e.g. for proper message,
+inventory and map handling. This information is kept in a separate structure
+tRogueData, declared in the source code file creature.h.</p>
+
+<p><a name="act"></a><b>Activities of Creatures</b></p>
+
+<p>Creatures can act at different speeds, not merely once per dungeon clock
+tick. To enable a fine-grained speed of activities, the game uses <a
+href="tick.html">milliticks</a>.</p>
+
+<p>Sleeping and frozen creatures don't act at all. As a rule of thumb, other
+creatures act once per tick by default, hasted creatures act nearly twice as
+often, slowed ones only every other tick. The exact speed depends on various
+details. Especially, the speed of the player character depends on the chosen
+role preference and on the weight of the current inventory.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>

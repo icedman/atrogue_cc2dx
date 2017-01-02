@@ -1,0 +1,21 @@
+Begin4
+Title:          atrogue
+Version:        0.3.0
+Entered-date:   2010-02-22
+Description:    atrogue is a "Rogue-like game" - a certain kind of turn-based,
+                single-player dungeon exploration adventure - for text
+                terminals on computers with Unix-like operating systems.
+                atrogue provides customizable dungeon size and gameplay
+                difficulty and optional color support. Since many things in
+                this game depend on chance, you get a different dungeon each
+                time you play it. The project home page is
+                <http://atrogue.sourceforge.net/>.
+Keywords:       Rogue, turn-based, single-player, dungeon, adventure, magic,
+                Yendor, role-playing, RPG, game
+Author:         arne@arne-thomassen.de (Arne Thomassen)
+Maintained-by:  arne@arne-thomassen.de (Arne Thomassen)
+Primary-site:   atrogue.sourceforge.net
+                242 KB atrogue-0.3.0.tar.gz
+Platforms:      Unix-like operating systems (Posix standard)
+Copying-policy: GPL 3
+End

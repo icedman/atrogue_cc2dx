@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html version="4.01"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>[atrogue] Dungeon Creation</title>
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000ff" vlink="#551a8b" alink="#551a8b" lang="en">
+<center><b><font size="+2">atrogue Documentation</font><br>for
+Developers<br><font size="+1">Dungeon Creation</font></b></center>
+
+<p>The dungeon of atrogue consists of several consecutive storeys; the current
+storey number is shown in the <a
+href="../map_screen.html#statistics">statistics line</a> on the map screen.
+Storeys are connected by staircases; some staircases are "unidirectional", i.e.
+they allow the player to go either down or up, not both; depending on gameplay
+difficulty, some upward staircases may only appear when the player has the
+Amulet. The player can enter a different storey by using a staircase; he can
+also get to a deeper storey "accidentally" by falling down a trapdoor or get to
+a higher storey by applying the Amulet.</p>
+
+<p>Each storey consists of one or more independent rectangular sections (maps).
+The sections within one storey aren't directly connected; the player can get
+from one to the other via special "magic" doorways or by teleporting or
+applying an object or other tricks.</p>
+
+<p>Each section is created "just in time" (i.e. not in advance, but only when
+the player character is about to enter it for the first time) and usually in
+the following steps:</p>
+
+<p><ul>
+<li>The available space of a section is divided into <b>rectangles</b> of
+random position, width and height. (This algorithm is some kind of "architect
+component".)</li>
+<li>When it's known how many rectangles fit into the section altogether, the
+next step is to decide how many of them should become <b>rooms</b> or
+<b>mazes</b> or simply remain <b>empty space</b>, respectively.</li>
+<li>The rooms and mazes are dug out of the "solid rock" and connected with each
+other by <b>tunnels</b>.</li>
+<li>Finally, the section gets some <b>stairs</b> to the next storey and is
+populated with <b>creatures</b> and <b>objects</b> etc.</li>
+</ul></p>
+
+<p>Once a section has been created, it is kept in memory; it isn't "forgotten"
+or randomly re-created each time the player leaves and revisits it. The only
+exception are sections which are explicitly marked as "volatile" (section flag
+secfVolatile); this is intended for higher gameplay difficulties, e.g. to
+create a seemingly infinite dungeon department.</p>
+
+<p>The dungeon is generally split into disjunct <i>departments</i>: vertical
+sequences of sections which span a range of storeys. Sections for different
+departments can be on the same storey. The "main" department of the dungeon is
+called "Deep Dungeon"; it consists of a sequence of sections which lead
+straight downward, like in the original Rogue games. Some sections of the main
+department are "branching": they contain more than one downward staircase or a
+special connection to another section on the current storey, leading to
+different departments. Among the possible other department kinds are mines and
+underground towns; each kind can have a specific section layout, not
+necessarily the "rooms and tunnels" layout of the main department.</p>
+
+<p><hr>This documentation file is part of version 0.3.0 of atrogue, a
+"Rogue-like game" created by <span lang="de">Arne Thoma&szlig;en</span>.
+atrogue is basically released under certain versions of the GNU General Public
+License and WITHOUT ANY WARRANTY. Copyright (C) 2001-2010 <a
+href="mailto:arne@arne-thomassen.de"><span lang="de">Arne
+Thoma&szlig;en</span></a>. The project home page is <a
+href="http://atrogue.sourceforge.net/">atrogue.sourceforge.net</a>.</p>
+</body></html>
