@@ -446,7 +446,7 @@ md_getusername(void)
 #elif defined(HAVE_GETPWUID)&& !defined(__DJGPP__)
     struct passwd *pw;
 
-#if defined (__APPLE__) && !defined (TARGET_OS_MAC)
+#if CC_PLATFORM_IOS
     if (1) {
         strcpy(login, "rogue");
         return login;
@@ -484,7 +484,7 @@ md_gethomedir(void)
 #else
     char slash = '/';
     
-#if defined (__APPLE__) && !defined (TARGET_OS_MAC)
+#if CC_PLATFORM_IOS
     if (1) {
         strcpy(homedir, "/");
         return homedir;
