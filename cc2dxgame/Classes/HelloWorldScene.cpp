@@ -3,7 +3,7 @@
 #include "CursesTileMap.hpp"
 
 extern "C" {
-    int atrogue_main(int argc, const char ** argv);
+    int rogue_main(int argc, const char ** argv);
     void pushKey(int k);
 }
 
@@ -11,6 +11,9 @@ extern "C" {
 pthread_t gameThread;
 
 extern char *getScreenData();
+
+#define TERMINAL_WIDTH 80
+#define TERMINAL_HEIGHT 25
 
 void* gameThreadRoutine(void *arg)
 {
@@ -21,7 +24,8 @@ void* gameThreadRoutine(void *arg)
         "--sec-width=60",
         "--sec-height=25",
     };
-    atrogue_main(5,argv);
+    
+    rogue_main(5,(const char**)argv);
     return 0;
 }
 
@@ -60,17 +64,17 @@ bool HelloWorld::init()
 
     dungeonMap = new CursesTileMap();
     dungeonMap->initWithTMXFile("blank.tmx");
-    dungeonMap->setTerminalSize(Vec2(60,25));
+    dungeonMap->setTerminalSize(Size(TERMINAL_WIDTH,TERMINAL_HEIGHT));
     this->addChild(dungeonMap);
     
-    float scaleUp = (winSize.width) / (84 * 8) * Director::getInstance()->getContentScaleFactor();
-    float scaleUpY = (winSize.height) / (41 * 8) * Director::getInstance()->getContentScaleFactor();
+    float scaleUp = (winSize.width) / ((TERMINAL_WIDTH + 2) * 8) * Director::getInstance()->getContentScaleFactor();
+    float scaleUpY = (winSize.height) / ((TERMINAL_HEIGHT + 2) * 8) * Director::getInstance()->getContentScaleFactor();
     if (scaleUp > scaleUpY)
         scaleUp = scaleUpY;
     
     //    scaleUp = 1.0f;
     
-    float offX = ((((winSize.width) / (8.0 * scaleUp)) - 80) * 8.0 * scaleUp) * 0.5f;
+    float offX = ((((winSize.width) / (8.0 * scaleUp)) - TERMINAL_WIDTH) * 8.0 * scaleUp) * 0.5f;
     
     dungeonMap->setAnchorPoint(Vec2(0,1));
     dungeonMap->setPosition(offX, origin.y + visibleSize.height - 10);
@@ -81,6 +85,8 @@ bool HelloWorld::init()
     memset(keysDown,0,sizeof(keysDown));
     
     this->scheduleUpdate();
+    
+    Director::getInstance()->getOpenGLView()->setIMEKeyboardState(true);
     return true;
 }
 
@@ -214,7 +220,4 @@ void HelloWorld::update(float delta)
 {
     dungeonMap->update(delta);
 }
-
-
-
 

@@ -21,11 +21,11 @@ CursesTileMap::CursesTileMap() : TMXTiledMap()
 {
 }
 
-void CursesTileMap::setTerminalSize(cocos2d::Vec2 sz)
+void CursesTileMap::setTerminalSize(cocos2d::Size sz)
 {
     // max of 80x25
-    
     _terminalSize = sz;
+    setMapSize(sz);
 }
 
 void CursesTileMap::update(float delta)
@@ -36,12 +36,12 @@ void CursesTileMap::update(float delta)
     TMXLayer *layer = getLayer("Background");
     char *data = getScreenData();
     
-    if (_terminalSize.y == 0 || _terminalSize.x == 0) {
-        _terminalSize = Vec2(getmaxx(curscr), getmaxy(curscr));
+    if (_terminalSize.width == 0 || _terminalSize.height == 0) {
+        setTerminalSize(Size(getmaxx(curscr), getmaxy(curscr)));
     }
     
-    for(int r=0;r<_terminalSize.y;r++) {
-        for(int c=0;c<_terminalSize.x;c++) {
+    for(int r=0;r<_terminalSize.height;r++) {
+        for(int c=0;c<_terminalSize.width;c++) {
             char ch = data[(r*80) + c];
             
             // shouldn't come to here

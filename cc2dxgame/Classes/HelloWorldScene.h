@@ -19,7 +19,6 @@ public:
     void update(float delta);
     
     int mapKey(int k);
-    
     CursesTileMap *dungeonMap;
     int keysDown[1024];
     

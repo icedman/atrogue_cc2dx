@@ -18,10 +18,10 @@ public:
     CursesTileMap();
     virtual void update(float delta);
     
-    void setTerminalSize(cocos2d::Vec2 sz);
+    void setTerminalSize(cocos2d::Size sz);
     
 private:
-    cocos2d::Vec2 _terminalSize;
+    cocos2d::Size _terminalSize;
 };
 
 #endif /* CursesTileMap_hpp */
