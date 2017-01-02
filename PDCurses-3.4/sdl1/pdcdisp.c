@@ -163,6 +163,7 @@ void PDC_gotoyx(int row, int col)
     if (ch & A_ALTCHARSET && !(ch & 0xff80))
         ch = acs_map[ch & 0x7f];
 #endif
+    
     src.h = (SP->visibility == 1) ? pdc_fheight >> 2 : pdc_fheight;
     src.w = pdc_fwidth;
 
