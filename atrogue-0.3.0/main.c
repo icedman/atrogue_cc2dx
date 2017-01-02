@@ -3142,7 +3142,7 @@ void player_tickout_handler(tTickout* t __cunused, const tTickoutAction ta)
   }
 }
 
-int atrogue_main(int argc, const char** argv)
+int rogue_main(int argc, const char** argv)
 { tTickout* t;
   tMilliticks expiry, clockskip, tickskip;
   initialize(argc, argv);
