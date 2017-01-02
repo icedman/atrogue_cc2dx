@@ -18,10 +18,10 @@ extern char *getScreenData();
 void* gameThreadRoutine(void *arg)
 {
     const char *argv[] = {
-        "atrogue",
-        "--scr-width=60",
+        "rogue",
+        "--scr-width=80",
         "--scr-height=25",
-        "--sec-width=60",
+        "--sec-width=80",
         "--sec-height=25",
     };
     
@@ -124,6 +124,9 @@ int HelloWorld::mapKey(int k) {
     
     bool isShifting = (keysDown[(int)EventKeyboard::KeyCode::KEY_LEFT_SHIFT] == 0xff ||
                        keysDown[(int)EventKeyboard::KeyCode::KEY_RIGHT_SHIFT] == 0xff);
+    
+    bool isControlling = (keysDown[(int)EventKeyboard::KeyCode::KEY_LEFT_CTRL] == 0xff ||
+                       keysDown[(int)EventKeyboard::KeyCode::KEY_RIGHT_CTRL] == 0xff);
     
     // special keys
     switch (k)
