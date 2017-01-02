@@ -262,7 +262,6 @@ md_onsignal_autosave(void)
 int
 md_hasclreol(void)
 {
-#if 0
 #if defined(clr_eol)
 #ifdef NCURSES_VERSION
     if (cur_term == NULL)
@@ -275,8 +274,6 @@ md_hasclreol(void)
     return(TRUE);
 #else
     return((CE != NULL) && (*CE != 0));
-#endif
-    return 0;
 #endif
 }
 
@@ -449,6 +446,13 @@ md_getusername(void)
 #elif defined(HAVE_GETPWUID)&& !defined(__DJGPP__)
     struct passwd *pw;
 
+#if defined (__APPLE__) && !defined (TARGET_OS_MAC)
+    if (1) {
+        strcpy(login, "rogue");
+        return login;
+    }
+#endif
+    
     pw = getpwuid(getuid());
 
     l = pw->pw_name;
@@ -479,11 +483,19 @@ md_gethomedir(void)
         char slash = '\\';
 #else
     char slash = '/';
+    
+#if defined (__APPLE__) && !defined (TARGET_OS_MAC)
+    if (1) {
+        strcpy(homedir, "/");
+        return homedir;
+    }
+#endif
+    
     struct passwd *pw;
     pw = getpwuid(getuid());
 
     h = pw->pw_dir;
-
+    
     if (strcmp(h,"/") == 0)
         h = NULL;
 #endif
