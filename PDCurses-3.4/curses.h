@@ -49,7 +49,9 @@ PDCurses portable platform definitions list:
 #if defined(__cplusplus) || defined(__cplusplus__) || defined(__CPLUSPLUS)
 extern "C"
 {
+#if !defined(bool)
 # define bool _bool
+#endif
 #endif
 
 /*----------------------------------------------------------------------

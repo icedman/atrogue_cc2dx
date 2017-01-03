@@ -70,8 +70,8 @@ unsigned long pdc_key_modifiers = 0;
 #define PDC_cols 80
 
 int pdc_last_key = -1;
-int pdc_update_count = 1;
-#define SET_SCREEN_DIRTY() pdc_update_count = 1;
+int pdc_update_count = 2;
+#define SET_SCREEN_DIRTY() pdc_update_count = 2;
 
 t_pdc_color pdc_color[16];
 static struct {short f, b;} atrtab[PDC_COLOR_PAIRS];
