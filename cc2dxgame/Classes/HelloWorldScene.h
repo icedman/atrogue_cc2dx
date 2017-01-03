@@ -20,6 +20,7 @@ public:
     
     int mapKey(int k);
     CursesTileMap *dungeonMap;
+    CursesTileMap *dungeonMapGfx;
     int keysDown[1024];
     
     // implement the "static create()" method manually

@@ -80,6 +80,14 @@ bool HelloWorld::init()
     dungeonMap->setPosition(offX, origin.y + visibleSize.height - 10);
     dungeonMap->setScale(scaleUp);
     
+    // jerom
+    dungeonMapGfx = new CursesTileMap();
+    dungeonMapGfx->initWithTMXFile("blank_scrollo.tmx");
+    dungeonMapGfx->setTerminalSize(Size(TERMINAL_WIDTH,TERMINAL_HEIGHT));
+    dungeonMapGfx->setScale(2.0f);
+    dungeonMapGfx->mapping = true;
+    this->addChild(dungeonMapGfx);
+    
     dungeon_main();
     
     memset(keysDown,0,sizeof(keysDown));
@@ -222,5 +230,6 @@ int HelloWorld::mapKey(int k) {
 void HelloWorld::update(float delta)
 {
     dungeonMap->update(delta);
+    dungeonMapGfx->update(delta);
 }
 

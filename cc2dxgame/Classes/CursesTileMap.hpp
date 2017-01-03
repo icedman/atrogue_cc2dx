@@ -20,6 +20,7 @@ public:
     
     void setTerminalSize(cocos2d::Size sz);
     
+    bool mapping;
 private:
     cocos2d::Size _terminalSize;
 };
