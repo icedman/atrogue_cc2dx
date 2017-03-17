@@ -21,7 +21,29 @@ USING_NS_CC;
 
 CursesTileMap::CursesTileMap() : TMXTiledMap()
 {
-    mapping = false;
+    for(int i=0;i<256;i++) {
+        tilesetMap[i] = i;
+        colorMap[i] = Color3B::BLACK;
+    }
+    remappedTiles = false;
+    layer = 0;
+}
+
+CursesTileMap::TileColor* CursesTileMap::getScreenColor()
+{
+    return (CursesTileMap::TileColor*)(::getScreenColor());
+}
+
+bool CursesTileMap::isScreenDirty()
+{
+    return ::isScreenDirty();
+}
+
+char* CursesTileMap::getScreenData(bool fresh)
+{
+    if (fresh)
+        memcpy(screenData, ::getScreenData(), 2000);
+    return screenData;
 }
 
 void CursesTileMap::setTerminalSize(cocos2d::Size sz)
@@ -31,146 +53,162 @@ void CursesTileMap::setTerminalSize(cocos2d::Size sz)
     setMapSize(sz);
 }
 
-void CursesTileMap::update(float delta)
+int CursesTileMap::getGID(int id)
 {
-    if (!isScreenDirty())
+    return tilesetMap[id];
+}
+
+cocos2d::Color3B CursesTileMap::getColor(int id)
+{
+    Color3B clrMap = colorMap[id];
+    if (clrMap != Color3B::BLACK)
+        return clrMap;
+    return Color3B::WHITE;
+}
+
+void CursesTileMap::draw(char *data)
+{
+    if (!isVisible())
         return;
     
-    TMXLayer *layer = getLayer("Background");
-    char *data = getScreenData();
-    t_pdc_color *colors = getScreenColor();
+    if (layer == 0) {
+        layer = getLayer("Background");
+        layer->getTexture()->setAntiAliasTexParameters();
+        layer->getTexture()->setAliasTexParameters();
+    }
+    
+    TileColor *colors = getScreenColor();
     
     if (_terminalSize.width == 0 || _terminalSize.height == 0) {
         setTerminalSize(Size(getmaxx(curscr), getmaxy(curscr)));
     }
     
-    static int tilesetMap[1024];
-    
-    if (mapping && tilesetMap['.'] != 51) {
-        memset(tilesetMap, 0, sizeof(tilesetMap));
-        
-        // scroll-o-sprites
-        
-        tilesetMap['.'] = 549; // floor
-        tilesetMap['#'] = 549; // floor
-        tilesetMap['-'] = 522; // wall
-        tilesetMap['|'] = 522; // wall
-        tilesetMap['+'] = 534; // door
-        tilesetMap['>'] = 532; // stairs
-        tilesetMap['<'] = 533; // stairs
-        
-        
-        tilesetMap[':'] = 822; // food
-        tilesetMap['!'] = 845; // potion
-        tilesetMap['{'] = 748; // chest
-        
-        tilesetMap['['] = 913; // armor
-        tilesetMap[')'] = 903; // weapon
-        tilesetMap['/'] = 911; // long bow
-        tilesetMap['='] = 929; // ring
-        tilesetMap['%'] = 532; // stones << ? hole in the ground (for rogue)
-        tilesetMap['*'] = 755; // gold
-        tilesetMap['?'] = 988; // scroll
-        
-        tilesetMap['@'] = 124; // knight
-        
-        // monsters
-        tilesetMap['e'] = 294; // emu
-        tilesetMap['E'] = 294; // emu
-        tilesetMap['B'] = 283; // bat
-        tilesetMap['b'] = 283; // bat
-        tilesetMap['K'] = 289; // kestrel
-        tilesetMap['k'] = 289; // kestrel
-        tilesetMap['S'] = 288; // snake
-        tilesetMap['s'] = 288; // snake
-        tilesetMap['H'] = 342; // hobgoblin
-        tilesetMap['h'] = 342; // hobgoblin
-        
-#if 0 
-        // jerom tiles
-        
-        tilesetMap['.'] = 50; // floor
-        tilesetMap['#'] = 51; // floor
-        tilesetMap['-'] = 12; // wall
-        tilesetMap['|'] = 12; // wall
-        tilesetMap['+'] =  2; // door
-        tilesetMap['>'] = 13; // stairs
-        tilesetMap['<'] = 14; // stairs
-        
-        
-        tilesetMap[':'] =  96; // food
-        tilesetMap['!'] =  97; // potion
-        tilesetMap['{'] =  84; // chest
-        
-        tilesetMap['['] = 167; // armor
-        tilesetMap[')'] = 132; // weapon
-        tilesetMap['='] =  92; // ring
-        tilesetMap['*'] =  90; // stones
-        tilesetMap['%'] =  91; // bag of gold << ? hole in the ground (for rogue)
-        tilesetMap['?'] = 121; // scroll
-        
-        tilesetMap['@'] = 195; // knight
-        
-        // monsters
-        tilesetMap['e'] = 223; // emu
-        tilesetMap['E'] = 223; // emu
-        tilesetMap['B'] = 211; // bat
-        tilesetMap['b'] = 211; // bat
-        tilesetMap['K'] = 212; // kestrel
-        tilesetMap['k'] = 212; // kestrel
-        tilesetMap['S'] = 213; // snake
-        tilesetMap['s'] = 213; // snake
-        tilesetMap['R'] = 213; // rattle snake
-        tilesetMap['r'] = 213; // rattle snake
-        tilesetMap['H'] = 201; // hobgoblin
-        tilesetMap['h'] = 201; // hobgoblin
-#endif
-    }
-
+    int tw = _terminalSize.width;
     
     for(int r=0;r<_terminalSize.height;r++) {
         
-        if (r >= layer->getLayerSize().height)
-            break;
-        
         for(int c=0;c<_terminalSize.width;c++) {
-            
-            if (c >= layer->getLayerSize().width)
-                break;
-            
-            char ch = data[(r*80) + c];
-            t_pdc_color clr = colors[(r*80) + c];
-            
+                        
+            char ch = data[(r*tw) + c];
             int chM = tilesetMap[ch];
+            TileColor clr = colors[(r*tw) + c];
             
-            // shouldn't come to here
-            if (ch == -1)
+            if (ch == -1 || ch == ' ')
+                ch = 0;
+            
+            if (layer->getTileGIDAt(Vec2(c,r)) == chM + 1)
                 continue;
             
             auto tile = layer->getTileAt(Vec2(c,r));
+            if (!tile)
+                continue;
             
-            if (mapping) {
-                
-                if (!tile)
-                    continue;
-                
-                if (r == 0)
-                    chM = 0;
-                
-                tile->setVisible(chM != 0);
-//                tile->setScale(1.1f);
-                layer->setTileGID(chM + 1, Vec2(c,r));
-                
+            tile->setVisible(chM != 0);
+            tile->setScale(1.008, 1.008);
+            layer->setTileGID(chM + 1, Vec2(c,r));
+            
+            tile->setOpacity(layer->getOpacity());
+            
+            Color3B clrMap = colorMap[ch];
+            if (clrMap != Color3B::BLACK) {
+                tile->setColor(clrMap);
             } else {
-                layer->setTileGID(ch + 1, Vec2(c,r));
+                if (clr.r == 0 && clr.g == 0 && clr.b == 0)
+                    tile->setColor(Color3B(0xff,0xff,0xff));
+                else
+                    tile->setColor(Color3B(clr.r, clr.g, clr.b));
             }
-            
-//            CCLOG("%d %d %d", clr.r, clr.g, clr.b);
-            
-            if (clr.r == 0 && clr.g == 0 && clr.b == 0)
-                tile->setColor(Color3B(0xff,0xff,0xff));
-            else
-                tile->setColor(Color3B(clr.r, clr.g, clr.b));
         }
     }
+
+}
+
+void CursesTileMap::positionAndScale(MapAlign hAlign, MapAlign vAlign, float scale)
+{
+    int cw = getTileSize().width;
+    int ch = getTileSize().height;
+    
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    auto winSize = Director::getInstance()->getWinSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+    float scaleUp = (winSize.width) / ((_terminalSize.width + 2) * cw) * Director::getInstance()->getContentScaleFactor();
+    float scaleUpY = (winSize.height) / ((_terminalSize.height + 2) * ch) * Director::getInstance()->getContentScaleFactor();
+    if (scaleUp > scaleUpY)
+        scaleUp = scaleUpY;
+    
+    if (scale != 0) //scaleUp < scale)
+        scaleUp = scale;
+    
+//    scaleUp = floor(scaleUp);
+    
+    float tmxH = scaleUp * ch * (_terminalSize.height + 2);
+    float tmxW = scaleUp * ch * (_terminalSize.width + 2);
+    
+    float offX = origin.x + 10;
+    float offY = origin.y + winSize.height - 10;
+    
+    // alignment
+    switch(hAlign) {
+        case MapAlign::Center:
+            offX += (visibleSize.width * 0.5f);
+            offX -= (tmxW * 0.5f);
+            break;
+        case MapAlign::Right:
+            offX = origin.y + visibleSize.width - tmxW - 10;
+            break;
+        default:
+            break;
+    }
+    
+    switch(vAlign) {
+        case MapAlign::Middle:
+            offY -= (visibleSize.height * 0.5f);
+            offY += (tmxH * 0.5f);
+            break;
+        case MapAlign::Bottom:
+            offY = origin.y + tmxH + 10;
+            break;
+        default:
+            break;
+    }
+    
+    setAnchorPoint(Vec2(0,1));
+    setScale(scaleUp);
+    setPosition(offX, offY);
+}
+
+std::string CursesTileMap::getStringAtLine(int l)
+{
+    int tw  =_terminalSize.width;
+    char *data = getScreenData();
+    data += (l * tw);
+    
+    int end = tw;
+    while(end > 0) {
+        if (data[end-1] != ' ')
+            break;
+        end--;
+    }
+    
+    std::string str(data, end);
+//    fprintf(stdout, "%s\n", str.c_str());
+    return str;
+}
+
+void CursesTileMap::clearAtLine(int l)
+{
+    int tw  =_terminalSize.width;
+    char *data = getScreenData(false);
+    data += (l * tw);
+    memset(data, -1, sizeof(char)*tw);
+}
+
+void CursesTileMap::update(float delta)
+{
+    if (!isVisible())
+        return;
+    
+    if (isScreenDirty())
+        draw(getScreenData());
 }

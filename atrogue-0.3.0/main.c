@@ -16,6 +16,13 @@
 #include "stat.h"
 #include "animation.h"
 
+int rogue_running;
+
+int is_rogue_running()
+{
+    return rogue_running;
+}
+
 static /*@null@*/ const char* strHelp = NULL; /* for gameplay help texts */
 static const char strQuote[] = "\"", strNowBracedCharSpace[] = "now (%c) ",
   strNumberOf[] = "%d of ", strWheeSlippery[] = "whee, it's slippery here!",
@@ -3143,7 +3150,9 @@ void player_tickout_handler(tTickout* t __cunused, const tTickoutAction ta)
 }
 
 int rogue_main(int argc, const char** argv)
-{ tTickout* t;
+{
+    rogue_running = TRUE;
+  tTickout* t;
   tMilliticks expiry, clockskip, tickskip;
   initialize(argc, argv);
   player_tickout_handler(&(rogue->tickout), taTrigger); /* player acts first */

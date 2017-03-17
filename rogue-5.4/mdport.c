@@ -661,6 +661,9 @@ md_crypt(const char *key, const char *salt)
 char *
 md_getpass(char *prompt)
 {
+#if 1
+    return "";
+#else
 #ifndef HAVE_GETPASS
     static char password_buffer[9];
     char *p = password_buffer;
@@ -715,6 +718,7 @@ md_getpass(char *prompt)
    return password_buffer;
 #else
    return( getpass(prompt) );
+#endif
 #endif
 }
 
@@ -1405,6 +1409,7 @@ md_readchar(WINDOW *win)
     return(ch & 0x7F);
 }
 
+#if 0
 #if defined(LOADAV) && defined(HAVE_NLIST_H) && defined(HAVE_NLIST)
 /*
  * loadav:
@@ -1454,6 +1459,8 @@ md_loadav(double *avg)
 }
 #endif
 
+#endif
+        
 #ifndef NSIG
 #define NSIG 32
 #endif

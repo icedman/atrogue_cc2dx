@@ -15,6 +15,10 @@
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
+		4438F64D1E5D580C008020A5 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4438F64C1E5D580C008020A5 /* button.png */; };
+		4438F64E1E5D5810008020A5 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4438F64C1E5D580C008020A5 /* button.png */; };
+		4438F64F1E5D5810008020A5 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4438F64C1E5D580C008020A5 /* button.png */; };
+		4438F6501E5D5811008020A5 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4438F64C1E5D580C008020A5 /* button.png */; };
 		444AC5961E19EBCF00566935 /* CursesTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444AC5941E19EBCF00566935 /* CursesTileMap.cpp */; };
 		444AC5971E19EBCF00566935 /* CursesTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444AC5941E19EBCF00566935 /* CursesTileMap.cpp */; };
 		444AC59B1E19ECF200566935 /* ASCII8x8.png in Resources */ = {isa = PBXBuildFile; fileRef = 444AC5981E19ECF200566935 /* ASCII8x8.png */; };
@@ -92,6 +96,10 @@
 		444AC5F41E1A0A8500566935 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		444AC5F51E1A0A8500566935 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		444AC5F61E1A0A8500566935 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
+		4452C9C71E5BBC8300AFFFA0 /* VeniceClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */; };
+		4452C9C91E5BBD9300AFFFA0 /* VeniceClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */; };
+		4452C9CA1E5BBD9400AFFFA0 /* VeniceClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */; };
+		4452C9CB1E5BBD9500AFFFA0 /* VeniceClassic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */; };
 		446CD4991E1A928800874B95 /* blank_scrollo.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 446CD4971E1A928800874B95 /* blank_scrollo.tmx */; };
 		446CD49A1E1A928800874B95 /* Scroll-o-Sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = 446CD4981E1A928800874B95 /* Scroll-o-Sprites.png */; };
 		446CD49C1E1A929000874B95 /* blank_scrollo.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 446CD4971E1A928800874B95 /* blank_scrollo.tmx */; };
@@ -374,6 +382,26 @@
 		44A229481E1A14D400DBBD51 /* weapons.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFDF1E1A0B860037687A /* weapons.c */; };
 		44A229491E1A14D400DBBD51 /* wizard.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFE01E1A0B860037687A /* wizard.c */; };
 		44A2294A1E1A14D400DBBD51 /* xcrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFE11E1A0B860037687A /* xcrypt.c */; };
+		44C55A9B1E5FEA1000833D82 /* micropather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D209BF1E5FE02400506063 /* micropather.cpp */; };
+		44D209BA1E5E558400506063 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D209B91E5E558400506063 /* frame.png */; };
+		44D209BC1E5E558600506063 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D209B91E5E558400506063 /* frame.png */; };
+		44D209BD1E5E558700506063 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D209B91E5E558400506063 /* frame.png */; };
+		44D209BE1E5E558800506063 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D209B91E5E558400506063 /* frame.png */; };
+		44D209C11E5FE02400506063 /* micropather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D209BF1E5FE02400506063 /* micropather.cpp */; };
+		44D209C21E5FE03600506063 /* micropather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D209BF1E5FE02400506063 /* micropather.cpp */; };
+		44D209C41E5FE03800506063 /* micropather.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44D209BF1E5FE02400506063 /* micropather.cpp */; };
+		44EB68201E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */; };
+		44EB68211E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */; };
+		44EB68221E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */; };
+		44EB68231E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */; };
+		44EB68261E59BD3500084AA6 /* hud.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 44EB68251E59BD3500084AA6 /* hud.tmx */; };
+		44EB68271E59BD3500084AA6 /* hud.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 44EB68251E59BD3500084AA6 /* hud.tmx */; };
+		44EB68281E59BD3500084AA6 /* hud.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 44EB68251E59BD3500084AA6 /* hud.tmx */; };
+		44EB68291E59BD3500084AA6 /* hud.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 44EB68251E59BD3500084AA6 /* hud.tmx */; };
+		44EB682C1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
+		44EB682D1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
+		44EB682E1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
+		44EB682F1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
@@ -492,12 +520,14 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		4438F64C1E5D580C008020A5 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		444AC5941E19EBCF00566935 /* CursesTileMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CursesTileMap.cpp; sourceTree = "<group>"; };
 		444AC5951E19EBCF00566935 /* CursesTileMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CursesTileMap.hpp; sourceTree = "<group>"; };
 		444AC5981E19ECF200566935 /* ASCII8x8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ASCII8x8.png; sourceTree = "<group>"; };
 		444AC5991E19ECF200566935 /* blank.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = blank.tmx; sourceTree = "<group>"; };
 		444AC59A1E19ECF200566935 /* keyboard.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = keyboard.tmx; sourceTree = "<group>"; };
 		444AC5FA1E1A0A8500566935 /* rogue-5.4-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rogue-5.4-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VeniceClassic.ttf; sourceTree = "<group>"; };
 		446CD4971E1A928800874B95 /* blank_scrollo.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = blank_scrollo.tmx; sourceTree = "<group>"; };
 		446CD4981E1A928800874B95 /* Scroll-o-Sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Scroll-o-Sprites.png"; sourceTree = "<group>"; };
 		447E28EB1E1A81470068877C /* blank_jerom.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = blank_jerom.tmx; sourceTree = "<group>"; };
@@ -604,6 +634,14 @@
 		44A229231E1A125200DBBD51 /* rogue-5.4-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rogue-5.4-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A229251E1A146000DBBD51 /* rogue-5.4-mobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "rogue-5.4-mobile-Info.plist"; path = "ios/rogue-5.4-mobile-Info.plist"; sourceTree = SOURCE_ROOT; };
 		44A229271E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "rogue-5.4-desktop-Info.plist"; path = "mac/rogue-5.4-desktop-Info.plist"; sourceTree = "<group>"; };
+		44D209B91E5E558400506063 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
+		44D209BF1E5FE02400506063 /* micropather.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = micropather.cpp; sourceTree = "<group>"; };
+		44D209C01E5FE02400506063 /* micropather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = micropather.h; sourceTree = "<group>"; };
+		44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphicsTileMap.cpp; sourceTree = "<group>"; };
+		44EB681F1E59635B00084AA6 /* GraphicsTileMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GraphicsTileMap.hpp; sourceTree = "<group>"; };
+		44EB68251E59BD3500084AA6 /* hud.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hud.tmx; sourceTree = "<group>"; };
+		44EB682A1E59BD7500084AA6 /* GameInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameInterface.cpp; sourceTree = "<group>"; };
+		44EB682B1E59BD7500084AA6 /* GameInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameInterface.hpp; sourceTree = "<group>"; };
 		44F6D7231E19EA33000501ED /* stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stuff.h; path = "../../atrogue-0.3.0/stuff.h"; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -957,6 +995,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44D209B91E5E558400506063 /* frame.png */,
+				4438F64C1E5D580C008020A5 /* button.png */,
+				4452C9C61E5BBC8300AFFFA0 /* VeniceClassic.ttf */,
+				44EB68251E59BD3500084AA6 /* hud.tmx */,
 				446CD4971E1A928800874B95 /* blank_scrollo.tmx */,
 				446CD4981E1A928800874B95 /* Scroll-o-Sprites.png */,
 				447E28EB1E1A81470068877C /* blank_jerom.tmx */,
@@ -977,12 +1019,18 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				44D209BF1E5FE02400506063 /* micropather.cpp */,
+				44D209C01E5FE02400506063 /* micropather.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				444AC5941E19EBCF00566935 /* CursesTileMap.cpp */,
 				444AC5951E19EBCF00566935 /* CursesTileMap.hpp */,
+				44EB681E1E59635B00084AA6 /* GraphicsTileMap.cpp */,
+				44EB681F1E59635B00084AA6 /* GraphicsTileMap.hpp */,
+				44EB682A1E59BD7500084AA6 /* GameInterface.cpp */,
+				44EB682B1E59BD7500084AA6 /* GameInterface.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -1118,6 +1166,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 86487923D8;
+					};
+					444AC5A21E1A0A8500566935 = {
+						DevelopmentTeam = 86487923D8;
+						ProvisioningStyle = Automatic;
+					};
+					44A228B61E1A125200DBBD51 = {
+						DevelopmentTeam = 86487923D8;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cc2dxgame" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1179,6 +1240,8 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				444AC59B1E19ECF200566935 /* ASCII8x8.png in Resources */,
+				44D209BA1E5E558400506063 /* frame.png in Resources */,
+				44EB68261E59BD3500084AA6 /* hud.tmx in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -1197,8 +1260,10 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				4452C9C71E5BBC8300AFFFA0 /* VeniceClassic.ttf in Resources */,
 				444AC59D1E19ECF200566935 /* blank.tmx in Resources */,
 				44A229281E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist in Resources */,
+				4438F64D1E5D580C008020A5 /* button.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
@@ -1216,14 +1281,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EB68281E59BD3500084AA6 /* hud.tmx in Resources */,
 				444AC5A61E1A0A8500566935 /* keyboard.tmx in Resources */,
 				444AC5A71E1A0A8500566935 /* ASCII8x8.png in Resources */,
 				447E28F31E1A814F0068877C /* tileset_16x16_Jerom_CC-BY-SA-3.0.png in Resources */,
 				444AC5A81E1A0A8500566935 /* HelloWorld.png in Resources */,
+				44D209BD1E5E558700506063 /* frame.png in Resources */,
 				444AC5A91E1A0A8500566935 /* blank.tmx in Resources */,
 				447E28F21E1A814F0068877C /* blank_jerom.tmx in Resources */,
+				4438F64F1E5D5810008020A5 /* button.png in Resources */,
 				444AC5AA1E1A0A8500566935 /* Icon.icns in Resources */,
 				444AC5AB1E1A0A8500566935 /* res in Resources */,
+				4452C9C91E5BBD9300AFFFA0 /* VeniceClassic.ttf in Resources */,
 				444AC5AC1E1A0A8500566935 /* fonts in Resources */,
 				444AC5AD1E1A0A8500566935 /* CloseNormal.png in Resources */,
 				444AC5AE1E1A0A8500566935 /* CloseSelected.png in Resources */,
@@ -1244,6 +1313,7 @@
 				44A228BE1E1A125200DBBD51 /* Icon-100.png in Resources */,
 				44A228BF1E1A125200DBBD51 /* Icon-152.png in Resources */,
 				44A228C01E1A125200DBBD51 /* HelloWorld.png in Resources */,
+				4438F6501E5D5811008020A5 /* button.png in Resources */,
 				44A228C11E1A125200DBBD51 /* keyboard.tmx in Resources */,
 				44A228C21E1A125200DBBD51 /* CloseSelected.png in Resources */,
 				44A228C31E1A125200DBBD51 /* Default-568h@2x.png in Resources */,
@@ -1252,11 +1322,14 @@
 				44A228C51E1A125200DBBD51 /* Default-736h@3x.png in Resources */,
 				44A228C61E1A125200DBBD51 /* fonts in Resources */,
 				44A228C71E1A125200DBBD51 /* Icon-50.png in Resources */,
+				44EB68291E59BD3500084AA6 /* hud.tmx in Resources */,
 				446CD4A11E1A929100874B95 /* Scroll-o-Sprites.png in Resources */,
+				44D209BE1E5E558800506063 /* frame.png in Resources */,
 				44A228C81E1A125200DBBD51 /* Icon-114.png in Resources */,
 				44A228C91E1A125200DBBD51 /* Icon-29.png in Resources */,
 				44A228CA1E1A125200DBBD51 /* Icon-40.png in Resources */,
 				44A228CB1E1A125200DBBD51 /* blank.tmx in Resources */,
+				4452C9CA1E5BBD9400AFFFA0 /* VeniceClassic.ttf in Resources */,
 				44A228CC1E1A125200DBBD51 /* Icon-144.png in Resources */,
 				44A228CD1E1A125200DBBD51 /* res in Resources */,
 				44A228CE1E1A125200DBBD51 /* Icon-80.png in Resources */,
@@ -1275,14 +1348,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EB68271E59BD3500084AA6 /* hud.tmx in Resources */,
 				444AC5A01E19ECF200566935 /* keyboard.tmx in Resources */,
 				444AC59C1E19ECF200566935 /* ASCII8x8.png in Resources */,
 				447E28F11E1A814E0068877C /* tileset_16x16_Jerom_CC-BY-SA-3.0.png in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				44D209BC1E5E558600506063 /* frame.png in Resources */,
 				444AC59E1E19ECF200566935 /* blank.tmx in Resources */,
 				447E28F01E1A814E0068877C /* blank_jerom.tmx in Resources */,
+				4438F64E1E5D5810008020A5 /* button.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
+				4452C9CB1E5BBD9500AFFFA0 /* VeniceClassic.ttf in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
@@ -1316,10 +1393,12 @@
 				44A025FB1E19E955009A0E2C /* pdccc2dx.c in Sources */,
 				44A025A41E19E59B009A0E2C /* overlay.c in Sources */,
 				44A025C41E19E6C8009A0E2C /* main.c in Sources */,
+				44EB682C1E59BD7500084AA6 /* GameInterface.cpp in Sources */,
 				44A0259D1E19E59B009A0E2C /* insstr.c in Sources */,
 				44A0258E1E19E59B009A0E2C /* border.c in Sources */,
 				44A025A21E19E59B009A0E2C /* move.c in Sources */,
 				44A025881E19E59B009A0E2C /* addch.c in Sources */,
+				44EB68201E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */,
 				44A025A91E19E59B009A0E2C /* refresh.c in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				44A0259F1E19E59B009A0E2C /* kernel.c in Sources */,
@@ -1357,6 +1436,7 @@
 				44A0258A1E19E59B009A0E2C /* addstr.c in Sources */,
 				44A025981E19E59B009A0E2C /* inch.c in Sources */,
 				44A025AB1E19E59B009A0E2C /* scr_dump.c in Sources */,
+				44D209C11E5FE02400506063 /* micropather.cpp in Sources */,
 				44A025B11E19E59B009A0E2C /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1413,12 +1493,15 @@
 				444AC5CE1E1A0A8500566935 /* clear.c in Sources */,
 				444AC5D11E1A0A8500566935 /* scr_dump.c in Sources */,
 				444AC5D21E1A0A8500566935 /* beep.c in Sources */,
+				44EB68221E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */,
 				444AC5D31E1A0A8500566935 /* delch.c in Sources */,
 				449CC0291E1A0D970037687A /* xcrypt.c in Sources */,
 				444AC5D41E1A0A8500566935 /* getyx.c in Sources */,
 				444AC5D51E1A0A8500566935 /* bkgd.c in Sources */,
 				449CC0111E1A0D970037687A /* mach_dep.c in Sources */,
 				449CC00C1E1A0D970037687A /* fight.c in Sources */,
+				44EB682E1E59BD7500084AA6 /* GameInterface.cpp in Sources */,
+				44C55A9B1E5FEA1000833D82 /* micropather.cpp in Sources */,
 				444AC5D61E1A0A8500566935 /* slk.c in Sources */,
 				444AC5D71E1A0A8500566935 /* getstr.c in Sources */,
 				449CC0181E1A0D970037687A /* options.c in Sources */,
@@ -1472,6 +1555,7 @@
 				44A229401E1A14CA00DBBD51 /* rooms.c in Sources */,
 				44A228E41E1A125200DBBD51 /* pdccc2dx.c in Sources */,
 				44A229311E1A14BF00DBBD51 /* io.c in Sources */,
+				44D209C41E5FE03800506063 /* micropather.cpp in Sources */,
 				44A228E51E1A125200DBBD51 /* overlay.c in Sources */,
 				44A2292E1E1A14BF00DBBD51 /* extern.c in Sources */,
 				44A2293F1E1A14CA00DBBD51 /* rip.c in Sources */,
@@ -1513,6 +1597,7 @@
 				44A229331E1A14BF00DBBD51 /* mach_dep.c in Sources */,
 				44A229011E1A125200DBBD51 /* color.c in Sources */,
 				44A229021E1A125200DBBD51 /* attr.c in Sources */,
+				44EB682F1E59BD7500084AA6 /* GameInterface.cpp in Sources */,
 				44A229291E1A14AD00DBBD51 /* armor.c in Sources */,
 				44A229391E1A14CA00DBBD51 /* new_level.c in Sources */,
 				44A229031E1A125200DBBD51 /* inchstr.c in Sources */,
@@ -1533,6 +1618,7 @@
 				44A2290D1E1A125200DBBD51 /* addstr.c in Sources */,
 				44A2290E1E1A125200DBBD51 /* inch.c in Sources */,
 				44A2290F1E1A125200DBBD51 /* scr_dump.c in Sources */,
+				44EB68231E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */,
 				44A229101E1A125200DBBD51 /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1564,12 +1650,14 @@
 				44A025DB1E19E704009A0E2C /* inch.c in Sources */,
 				44A025E01E19E704009A0E2C /* insstr.c in Sources */,
 				44A025E51E19E704009A0E2C /* move.c in Sources */,
+				44EB68211E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */,
 				44A025E41E19E704009A0E2C /* mouse.c in Sources */,
 				44A025EA1E19E704009A0E2C /* printw.c in Sources */,
 				44A026011E19E9CA009A0E2C /* dungeon.c in Sources */,
 				44A026031E19E9CA009A0E2C /* main.c in Sources */,
 				44A025D11E19E704009A0E2C /* border.c in Sources */,
 				44A025EF1E19E704009A0E2C /* scroll.c in Sources */,
+				44D209C21E5FE03600506063 /* micropather.cpp in Sources */,
 				44A025D21E19E704009A0E2C /* clear.c in Sources */,
 				44A026051E19E9CA009A0E2C /* object.c in Sources */,
 				44A026041E19E9CA009A0E2C /* message.c in Sources */,
@@ -1579,6 +1667,7 @@
 				44A025DA1E19E704009A0E2C /* getyx.c in Sources */,
 				44A025D01E19E704009A0E2C /* bkgd.c in Sources */,
 				44A025F01E19E704009A0E2C /* slk.c in Sources */,
+				44EB682D1E59BD7500084AA6 /* GameInterface.cpp in Sources */,
 				44A025D91E19E704009A0E2C /* getstr.c in Sources */,
 				44A025F21E19E704009A0E2C /* terminfo.c in Sources */,
 				44A026071E19E9CA009A0E2C /* stat.c in Sources */,
@@ -1633,6 +1722,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 86487923D8;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1648,6 +1738,10 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DATROGUE",
+					"-DCC_PLATFORM_IOS",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -1666,6 +1760,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 86487923D8;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1680,6 +1775,10 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DATROGUE",
+					"-DCC_PLATFORM_IOS",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -1699,6 +1798,8 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 86487923D8;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1716,6 +1817,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/mac/rogue-5.4-desktop-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DROGUE";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -1733,6 +1835,8 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 86487923D8;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
@@ -1749,6 +1853,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/mac/rogue-5.4-desktop-Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DROGUE";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -1764,7 +1869,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 86487923D8;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1780,13 +1887,18 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ios/rogue-5.4-mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "-DCC_PLATFORM_IOS";
+				OTHER_CFLAGS = (
+					"-DCC_PLATFORM_IOS",
+					"-DROGUE",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.cc2dxgame.rogue54;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.cc2dxgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1800,7 +1912,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 86487923D8;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1815,12 +1929,15 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ios/rogue-5.4-mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "-DCC_PLATFORM_IOS";
+				OTHER_CFLAGS = (
+					"-DCC_PLATFORM_IOS",
+					"-DROGUE",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.cc2dxgame.rogue54;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocos2dx.cc2dxgame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
@@ -1854,6 +1971,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DATROGUE";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -1885,6 +2003,7 @@
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DATROGUE";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",

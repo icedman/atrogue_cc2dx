@@ -93,6 +93,7 @@ static one_caller void save_due_to_error(void)
   /* IMPLEMENTME! */
 }
 
+extern int rogue_running;
 void do_quit_msg(tExitcode exitcode, const char* msg)
 {
 #if !CONFIG_GRAPHICS
@@ -102,10 +103,13 @@ void do_quit_msg(tExitcode exitcode, const char* msg)
   if ( (msg != NULL) && (msg[0] != '\0') ) (void) puts(msg);
   if (exitcode != ecOkay) save_due_to_error();
 
+  rogue_running = FALSE;
+/*
 #if CONFIG_GRAPHICS
   gtk_exit(exitcode);
 #endif
   exit(exitcode);
+  */
 }
 
 my_inline void do_quit(tExitcode exitcode)

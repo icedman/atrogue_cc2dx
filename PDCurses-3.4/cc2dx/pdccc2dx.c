@@ -71,7 +71,10 @@ unsigned long pdc_key_modifiers = 0;
 
 int pdc_last_key = -1;
 int pdc_update_count = 2;
-#define SET_SCREEN_DIRTY() pdc_update_count = 2;
+int pdc_consumers = 2;
+
+// count depends on number of consumers
+#define SET_SCREEN_DIRTY() pdc_update_count = pdc_consumers;
 
 t_pdc_color pdc_color[16];
 static struct {short f, b;} atrtab[PDC_COLOR_PAIRS];
@@ -80,6 +83,11 @@ t_pdc_color screenColor[PDC_cols*PDC_rows];
 
 static chtype oldch = (chtype)(-1);    /* current attribute */
 static short foregr = -2, backgr = -2; /* current foreground, background */
+
+void setUpdateConsumers(int c)
+{
+    pdc_consumers = c;
+}
 
 char *getScreenData()
 {
@@ -110,7 +118,7 @@ void PDC_transform_line(int lineno, int x, int len, const chtype *srcp);
 static void _set_attr(chtype ch, int row, int col)
 {
     ch &= (A_COLOR|A_BOLD|A_BLINK|A_REVERSE);
-
+    
     if (oldch != ch)
     {
         short newfg, newbg;
@@ -170,7 +178,7 @@ bool PDC_check_key(void)
 
 int PDC_color_content(short color, short * red, short * green, short * blue)
 {
-//    fprintf(stdout, "int PDC_color_content(short, short *, short *, short *)\n");
+    //    fprintf(stdout, "int PDC_color_content(short, short *, short *, short *)\n");
     
     *red = pdc_color[color].r;
     *green = pdc_color[color].g;
@@ -181,7 +189,7 @@ int PDC_color_content(short color, short * red, short * green, short * blue)
 
 int PDC_curs_set(int visibility)
 {
-//    fprintf(stdout, "int PDC_curs_set(int)\n");
+    //    fprintf(stdout, "int PDC_curs_set(int)\n");
     int ret_vis;
     
     PDC_LOG(("PDC_curs_set() - called: visibility=%d\n", visibility));
@@ -271,12 +279,12 @@ void PDC_gotoyx(int row, int col)
 
 int PDC_init_color(short color, short red, short green, short blue)
 {
-//    fprintf(stdout, "int PDC_init_color(short, short, short, short)\n");
+    //    fprintf(stdout, "int PDC_init_color(short, short, short, short)\n");
     fprintf(stdout, "int PDC_init_color(%d, %d, %d, %d)\n", color, red, green, blue);
     pdc_color[color].r = red;
     pdc_color[color].g = green;
     pdc_color[color].b = blue;
-
+    
     wrefresh(curscr);
     
     return OK;
@@ -284,7 +292,7 @@ int PDC_init_color(short color, short red, short green, short blue)
 
 void PDC_init_pair(short pair, short fg, short bg)
 {
-//    fprintf(stdout, "void PDC_init_pair(short %d, short %d, short %d)\n", pair, fg, bg);
+    //    fprintf(stdout, "void PDC_init_pair(short %d, short %d, short %d)\n", pair, fg, bg);
     atrtab[pair].f = fg;
     atrtab[pair].b = bg;
 }
@@ -310,10 +318,10 @@ void PDC_napms(int p1)
 
 int PDC_pair_content(short pair, short * fg, short * bg)
 {
-
+    
     *fg = atrtab[pair].f;
     *bg = atrtab[pair].b;
-//    fprintf(stdout, "int PDC_pair_content(short, short * %d, short * %d)\n", *fg, *bg);
+    //    fprintf(stdout, "int PDC_pair_content(short, short * %d, short * %d)\n", *fg, *bg);
     return OK;
 }
 
@@ -372,7 +380,7 @@ int PDC_scr_open(int p1, char ** p2)
     SP->orig_attr = TRUE;
     SP->orig_fore = COLOR_WHITE;
     SP->orig_back = -1;
-
+    
     int off = 3;
     for (i = 0; i < 8; i++)
     {
@@ -384,7 +392,7 @@ int PDC_scr_open(int p1, char ** p2)
         pdc_color[i + 8].g = ((i + off) & COLOR_GREEN) ? 0xff : 0x40;
         pdc_color[i + 8].b = ((i + off) & COLOR_BLUE) ? 0xff : 0x40;
         
-//        fprintf(stdout, "%d %d %d\n", pdc_color[i].r, pdc_color[i].g, pdc_color[i].b);
+        //        fprintf(stdout, "%d %d %d\n", pdc_color[i].r, pdc_color[i].g, pdc_color[i].b);
     }
     
     SP->lines = PDC_get_rows();
@@ -399,7 +407,7 @@ int PDC_scr_open(int p1, char ** p2)
 
 int PDC_set_blink(bool blinkon)
 {
-//    fprintf(stdout, "int PDC_set_blink(bool)\n");
+    //    fprintf(stdout, "int PDC_set_blink(bool)\n");
     if (pdc_color_started)
         COLORS = 16;
     
@@ -433,7 +441,7 @@ void PDC_transform_line(int lineno, int x, int len, const chtype *srcp)
         }
         
         _set_attr(ch, lineno, x + j);
-
+        
 #ifdef CHTYPE_LONG
         if (ch & A_ALTCHARSET && !(ch & 0xff80))
             ch = (ch & (A_ATTRIBUTES ^ A_ALTCHARSET)) | acs_map[ch & 0x7f];

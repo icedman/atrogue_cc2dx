@@ -48,6 +48,8 @@ static char *rip[] = {
 void
 score(int amount, int flags, int monst)
 {
+    return;
+    
     SCORE *scp;
     int i;
     SCORE *sc2;

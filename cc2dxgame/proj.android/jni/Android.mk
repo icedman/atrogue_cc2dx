@@ -7,6 +7,8 @@ $(call import-add-path,$(LOCAL_PATH)/../../cocos2d/external)
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d/cocos)
 $(call import-add-path,$(LOCAL_PATH)/../../cocos2d/cocos/audio/include)
 
+APP_CPPFLAGS += -DHAVE_CONFIG_H
+
 LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
@@ -15,17 +17,42 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 		../../Classes/AppDelegate.cpp \
 		../../Classes/HelloWorldScene.cpp \
 		../../Classes/CursesTileMap.cpp \
-		../../../atrogue-0.3.0/.config \
-		../../../atrogue-0.3.0/action.c \
-		../../../atrogue-0.3.0/creature.c \
-		../../../atrogue-0.3.0/dungeon.c \
-		../../../atrogue-0.3.0/init.c \
-		../../../atrogue-0.3.0/main.c \
-		../../../atrogue-0.3.0/message.c \
-		../../../atrogue-0.3.0/object.c \
-		../../../atrogue-0.3.0/random.c \
-		../../../atrogue-0.3.0/stat.c \
-		../../../atrogue-0.3.0/stuff.c \
+		../../Classes/GraphicsTileMap.cpp \
+		../../Classes/GameInterface.cpp \
+		../../Classes/micropather.cpp \
+		../../../rogue-5.4/armor.c \
+		../../../rogue-5.4/chase.c \
+		../../../rogue-5.4/command.c \
+		../../../rogue-5.4/daemon.c \
+		../../../rogue-5.4/daemons.c \
+		../../../rogue-5.4/extern.c \
+		../../../rogue-5.4/fight.c \
+		../../../rogue-5.4/init.c \
+		../../../rogue-5.4/io.c \
+		../../../rogue-5.4/list.c \
+		../../../rogue-5.4/mach_dep.c \
+		../../../rogue-5.4/main.c \
+		../../../rogue-5.4/mdport.c \
+		../../../rogue-5.4/misc.c \
+		../../../rogue-5.4/monsters.c \
+		../../../rogue-5.4/move.c \
+		../../../rogue-5.4/new_level.c \
+		../../../rogue-5.4/options.c \
+		../../../rogue-5.4/pack.c \
+		../../../rogue-5.4/passages.c \
+		../../../rogue-5.4/potions.c \
+		../../../rogue-5.4/rings.c \
+		../../../rogue-5.4/rip.c \
+		../../../rogue-5.4/rooms.c \
+		../../../rogue-5.4/save.c \
+		../../../rogue-5.4/scrolls.c \
+		../../../rogue-5.4/state.c \
+		../../../rogue-5.4/sticks.c \
+		../../../rogue-5.4/things.c \
+		../../../rogue-5.4/vers.c \
+		../../../rogue-5.4/weapons.c \
+		../../../rogue-5.4/wizard.c \
+		../../../rogue-5.4/xcrypt.c \
 		../../../PDCurses-3.4/pdcurses/addch.c \
 		../../../PDCurses-3.4/pdcurses/addchstr.c \
 		../../../PDCurses-3.4/pdcurses/addstr.c \
@@ -71,7 +98,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 		../../../PDCurses-3.4/cc2dx/pdccc2dx.c
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
-	$(LOCAL_PATH)/../../../atrogue-0.3.0 \
+	$(LOCAL_PATH)/../../../rogue-5.4 \
 	$(LOCAL_PATH)/../../../PDCurses-3.4 \
 	$(LOCAL_PATH)/../../../PDCurses-3.4/cc2dx
 

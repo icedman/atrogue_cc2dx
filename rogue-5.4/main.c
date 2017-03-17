@@ -20,6 +20,21 @@
 #include <curses.h>
 #include "rogue.h"
 
+int rogue_running;
+
+int is_rogue_running()
+{
+    return rogue_running;
+}
+
+int what_thing(int y, int x) {
+    THING *g = find_obj(y, x);
+    if (g != NULL) {
+        return g->_o._o_which;
+    }
+    return 0;
+}
+
 /*
  * main:
  *	The main program, of course
@@ -27,6 +42,8 @@
 int
 rogue_main(int argc, char **argv)
 {
+    rogue_running = TRUE;
+    
     char *env;
     time_t lowtime;
 
@@ -163,6 +180,9 @@ rogue_main(int argc, char **argv)
     fuse(swander, 0, WANDERTIME, AFTER);
     start_daemon(stomach, 0, AFTER);
 
+    msg("Welcome to the Dungeons of Doom.");
+    //msg("Explore the deep dungeons");
+    
     playit();
     
     return(0);
@@ -316,6 +336,7 @@ quit(int sig)
 	mpos = 0;
     getyx(curscr, oy, ox);
     msg("really quit?");
+
     if (readchar() == 'y')
     {
 	signal(SIGINT, leave);
@@ -404,5 +425,7 @@ void
 my_exit(int st)
 {
     resetltchars();
-    exit(st);
+    
+    // exit(st);
+    rogue_running = FALSE;
 }

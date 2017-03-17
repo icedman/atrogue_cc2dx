@@ -262,10 +262,14 @@ over:
 		    }
 		when 'q': quaff();
 		when 'Q':
+//            total_winner();
+            death('K');
+                /*
 		    after = FALSE;
 		    q_comm = TRUE;
 		    quit(0);
 		    q_comm = FALSE;
+                 */
 		when 'i': after = FALSE; inventory(pack, 0);
 		when 'I': after = FALSE; picky_inven();
 		when 'd': drop();

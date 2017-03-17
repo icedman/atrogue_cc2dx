@@ -136,7 +136,7 @@ step_ok(int ch)
     {
 	case ' ':
 	case '|':
-	case '-':
+	case '-': // corners
 	    return FALSE;
 	default:
 	    return (!isalpha(ch));

@@ -163,12 +163,6 @@ draw_room(const struct room *rp)
 	horiz(rp, rp->r_pos.y);				/* Draw top */
 	horiz(rp, rp->r_pos.y + rp->r_max.y - 1);	/* Draw bottom */
         
-    // added corner
-    chat(rp->r_pos.y, rp->r_pos.x) = '0';
-    chat(rp->r_pos.y, rp->r_pos.x + rp->r_max.x - 1) = '1';
-    chat(rp->r_pos.y + rp->r_max.y - 1, rp->r_pos.x) = '2';
-    chat(rp->r_pos.y + rp->r_max.y - 1, rp->r_pos.x + rp->r_max.x - 1) = '3';
-
 	/*
 	 * Put the floor down
 	 */
