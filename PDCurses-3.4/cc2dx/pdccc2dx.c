@@ -5,7 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#ifdef WIN32
+#include <Windows.h>
+#else
 #include <unistd.h>
+#endif
 
 #ifdef CHTYPE_LONG
 
@@ -311,9 +316,12 @@ int PDC_mouse_set(void)
 
 void PDC_napms(int p1)
 {
-    //    fprintf(stdout, "void PDC_napms(int)\n");
+	//    fprintf(stdout, "void PDC_napms(int)\n");
+#ifdef WIN32
+	Sleep(p1 * 50 * .001f);
+#else
     usleep(p1 * 50);
-    
+#endif
 }
 
 int PDC_pair_content(short pair, short * fg, short * bg)

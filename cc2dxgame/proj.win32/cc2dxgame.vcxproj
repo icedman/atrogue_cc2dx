@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -24,6 +24,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -32,6 +33,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -63,16 +65,18 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\iceman\Developer\libs\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.15063.0\ucrt\x86;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;C:\Users\iceman\Developer\libs\libiconv-1.9.2-1-lib\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\iceman\Developer\libs\pthreads-w32-2-9-1-release\Pre-built.2\include;C:\Users\iceman\Developer\rogue_cc2dx\PDCurses-3.4\cc2dx;C:\Users\iceman\Developer\rogue_cc2dx\PDCurses-3.4;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\ucrt</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.15063.0\ucrt\x86;C:\Users\iceman\Developer\libs\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;C:\Users\iceman\Developer\libs\libiconv-1.9.2-1-lib\lib;$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\iceman\Developer\libs\pthreads-w32-2-9-1-release\Pre-built.2\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\ucrt;C:\Users\iceman\Developer\rogue_cc2dx\PDCurses-3.4;C:\Users\iceman\Developer\rogue_cc2dx\PDCurses-3.4\cc2dx;C:\Users\iceman\Developer\rogue_cc2dx\rogue-5.4</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_STRUCT_TIMESPEC;WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -84,7 +88,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalDependencies>pthreadVSE2.lib;;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -96,7 +100,8 @@
       </Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
@@ -108,13 +113,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <Inputs>$(TargetFileName)</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
-
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>$(EngineRoot)external;$(EngineRoot)cocos\audio\include;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>HAVE_STRUCT_TIMESPEC;WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -123,9 +127,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libcurl_imp.lib;websockets.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalDependencies>pthreadVSE2.lib;libcurl_imp.lib;websockets.lib;%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -139,17 +145,108 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
       </Command>
     </PostBuildEvent>
     <PreLinkEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\PDCurses-3.4\cc2dx\pdccc2dx.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addchstr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addstr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\attr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\beep.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\bkgd.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\border.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\clear.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\color.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\debug.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\delch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\deleteln.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\deprec.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getstr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getyx.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inchstr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\initscr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inopts.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\insch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\insstr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\instr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\kernel.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\keyname.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\mouse.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\move.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\outopts.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\overlay.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\pad.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\panel.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\printw.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\refresh.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scanw.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scroll.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scr_dump.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\slk.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\termattr.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\terminfo.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\touch.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\util.c" />
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\window.c" />
+    <ClCompile Include="..\..\rogue-5.4\armor.c" />
+    <ClCompile Include="..\..\rogue-5.4\chase.c" />
+    <ClCompile Include="..\..\rogue-5.4\command.c" />
+    <ClCompile Include="..\..\rogue-5.4\daemon.c" />
+    <ClCompile Include="..\..\rogue-5.4\daemons.c" />
+    <ClCompile Include="..\..\rogue-5.4\extern.c" />
+    <ClCompile Include="..\..\rogue-5.4\fight.c" />
+    <ClCompile Include="..\..\rogue-5.4\findpw.c" />
+    <ClCompile Include="..\..\rogue-5.4\init.c" />
+    <ClCompile Include="..\..\rogue-5.4\io.c" />
+    <ClCompile Include="..\..\rogue-5.4\list.c" />
+    <ClCompile Include="..\..\rogue-5.4\mach_dep.c" />
+    <ClCompile Include="..\..\rogue-5.4\rogue_main.c" />
+    <ClCompile Include="..\..\rogue-5.4\mdport.c" />
+    <ClCompile Include="..\..\rogue-5.4\misc.c" />
+    <ClCompile Include="..\..\rogue-5.4\monsters.c" />
+    <ClCompile Include="..\..\rogue-5.4\rogue_move.c" />
+    <ClCompile Include="..\..\rogue-5.4\new_level.c" />
+    <ClCompile Include="..\..\rogue-5.4\options.c" />
+    <ClCompile Include="..\..\rogue-5.4\pack.c" />
+    <ClCompile Include="..\..\rogue-5.4\passages.c" />
+    <ClCompile Include="..\..\rogue-5.4\potions.c" />
+    <ClCompile Include="..\..\rogue-5.4\rings.c" />
+    <ClCompile Include="..\..\rogue-5.4\rip.c" />
+    <ClCompile Include="..\..\rogue-5.4\rooms.c" />
+    <ClCompile Include="..\..\rogue-5.4\save.c" />
+    <ClCompile Include="..\..\rogue-5.4\scrolls.c" />
+    <ClCompile Include="..\..\rogue-5.4\state.c" />
+    <ClCompile Include="..\..\rogue-5.4\sticks.c" />
+    <ClCompile Include="..\..\rogue-5.4\things.c" />
+    <ClCompile Include="..\..\rogue-5.4\vers.c" />
+    <ClCompile Include="..\..\rogue-5.4\weapons.c" />
+    <ClCompile Include="..\..\rogue-5.4\wizard.c" />
+    <ClCompile Include="..\..\rogue-5.4\xcrypt.c" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\CursesTileMap.cpp" />
+    <ClCompile Include="..\Classes\GameInterface.cpp" />
+    <ClCompile Include="..\Classes\GraphicsTileMap.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\micropather.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\PDCurses-3.4\cc2dx\pdccc2dx.h" />
+    <ClInclude Include="..\..\rogue-5.4\config.h" />
+    <ClInclude Include="..\..\rogue-5.4\extern.h" />
+    <ClInclude Include="..\..\rogue-5.4\rogue.h" />
+    <ClInclude Include="..\..\rogue-5.4\score.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\CursesTileMap.hpp" />
+    <ClInclude Include="..\Classes\GameInterface.hpp" />
+    <ClInclude Include="..\Classes\GraphicsTileMap.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\micropather.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +263,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\PDCurses-3.4\pdcurses\README" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\rogue-5.4\LICENSE.TXT" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,6 +10,15 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="pdcurses">
+      <UniqueIdentifier>{af2426e0-e92e-4d2b-89c5-2fd9f0fe3b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rogue">
+      <UniqueIdentifier>{ab72efc5-c50f-4ee3-bdc5-18bf506014ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pdcurses\cc2dx">
+      <UniqueIdentifier>{29f4c10f-99c2-46f0-8d51-88dd5ddc0c84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -20,6 +29,249 @@
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CursesTileMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GraphicsTileMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\micropather.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addchstr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\addstr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\attr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\beep.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\bkgd.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\border.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\clear.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\color.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\debug.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\delch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\deleteln.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\deprec.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getstr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\getyx.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inchstr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\initscr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\inopts.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\insch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\insstr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\instr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\kernel.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\keyname.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\mouse.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\move.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\outopts.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\overlay.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\pad.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\panel.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\printw.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\refresh.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scanw.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scr_dump.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\scroll.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\slk.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\termattr.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\terminfo.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\touch.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\util.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\pdcurses\window.c">
+      <Filter>pdcurses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\armor.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\chase.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\command.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\daemon.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\daemons.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\extern.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\fight.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\findpw.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\init.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\io.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\list.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\mach_dep.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\mdport.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\misc.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\monsters.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\new_level.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\options.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\pack.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\passages.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\potions.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\rings.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\rip.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\rooms.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\save.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\scrolls.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\state.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\sticks.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\things.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\vers.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\weapons.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\wizard.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\xcrypt.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\rogue_move.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\rogue-5.4\rogue_main.c">
+      <Filter>rogue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PDCurses-3.4\cc2dx\pdccc2dx.c">
+      <Filter>pdcurses\cc2dx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -32,10 +284,47 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\CursesTileMap.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameInterface.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GraphicsTileMap.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\micropather.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\rogue-5.4\config.h">
+      <Filter>rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\rogue-5.4\extern.h">
+      <Filter>rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\rogue-5.4\rogue.h">
+      <Filter>rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\rogue-5.4\score.h">
+      <Filter>rogue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PDCurses-3.4\cc2dx\pdccc2dx.h">
+      <Filter>pdcurses\cc2dx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\PDCurses-3.4\pdcurses\README">
+      <Filter>pdcurses</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\rogue-5.4\LICENSE.TXT">
+      <Filter>rogue</Filter>
+    </Text>
   </ItemGroup>
 </Project>
