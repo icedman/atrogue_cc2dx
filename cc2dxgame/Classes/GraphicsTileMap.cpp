@@ -77,7 +77,7 @@ void GraphicsTileMap::loadTileset()
     tilesetMap['2'] = 567; // corner wall
     tilesetMap['3'] = 568; // corner wall
     tilesetMap['4'] = 911; // bow
-    tilesetMap['5'] = 912; // arrows
+    tilesetMap['5'] = 912; // arrows(darts)
     tilesetMap['6'] = 908; // mace
     tilesetMap['8'] = 905; // spear
     
@@ -191,7 +191,6 @@ bool isWall(char c, char c2) {
     return c == '-' || c == '|' || c == '+' || (c == '@' && c2 == '|');
 }
 
-/*
  #define MACE		0
  #define SWORD		1
  #define BOW		2
@@ -202,7 +201,6 @@ bool isWall(char c, char c2) {
  #define SHIRAKEN	7
  #define SPEAR		8
  #define FLAME		9
-*/
 
 void GraphicsTileMap::modifyWeaponTiles(char *data)
 {
@@ -217,13 +215,15 @@ void GraphicsTileMap::modifyWeaponTiles(char *data)
             
             int wt = what_thing(r, c);
             switch (wt) {
-                case 0: // mace
+                case MACE:
                     cc = '6';
                     break;
-                case 2: // bow
+                case BOW:
                     cc = '4';
                     break;
-                case 3: // arrow
+                case SHIRAKEN:
+                case DART:
+                case ARROW:
                     cc = '5';
                     break;
                 default: // 1 (sword

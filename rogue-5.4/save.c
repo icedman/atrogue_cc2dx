@@ -28,6 +28,7 @@
 void
 save_game(void)
 {
+#if 0
     FILE *savef;
     int c;
     char buf[MAXSTR];
@@ -104,6 +105,7 @@ gotfile:
     msg("");
     save_file(savef);
     /* NOTREACHED */
+#endif
 }
 
 /*
@@ -115,6 +117,7 @@ gotfile:
 void
 auto_save(int sig)
 {
+#if 0
     FILE *savef;
     NOOP(sig);
 
@@ -123,6 +126,7 @@ auto_save(int sig)
 	(md_unlink_open_file(file_name, savef) >= 0 && (savef = fopen(file_name, "w")) != NULL)))
 	    save_file(savef);
     exit(0);
+#endif
 }
 
 /*
@@ -133,6 +137,7 @@ auto_save(int sig)
 void
 save_file(FILE *savef)
 {
+#if 0
     char buf[80];
     mvcur(0, COLS - 1, LINES - 1, 0); 
     putchar('\n');
@@ -146,6 +151,7 @@ save_file(FILE *savef)
     fflush(savef);
     fclose(savef);
     exit(0);
+#endif
 }
 
 /*
@@ -156,6 +162,7 @@ save_file(FILE *savef)
 int
 restore(const char *file)
 {
+#if 0
     FILE *inf;
     int syml;
     char buf[MAXSTR];
@@ -256,6 +263,9 @@ restore(const char *file)
     playit();
     /*NOTREACHED*/
     return(0);
+#else
+    return FALSE;
+#endif
 }
 
 static int encerrno = 0;
@@ -371,6 +381,7 @@ encread(char *start, size_t size, FILE *inf)
 void
 rd_score(SCORE *top_ten)
 {
+#if 0
     char scoreline[100];
     int i;
 
@@ -390,7 +401,8 @@ rd_score(SCORE *top_ten)
             &top_ten[i].sc_level, &top_ten[i].sc_time);
     }
 
-    rewind(scoreboard); 
+    rewind(scoreboard);
+#endif
 }
 
 /*
@@ -400,6 +412,7 @@ rd_score(SCORE *top_ten)
 void
 wr_score(SCORE *top_ten)
 {
+#if 0
     char scoreline[100];
     int i;
 
@@ -419,5 +432,6 @@ wr_score(SCORE *top_ten)
           encwrite(scoreline,100,scoreboard);
     }
 
-    rewind(scoreboard); 
+    rewind(scoreboard);
+#endif
 }

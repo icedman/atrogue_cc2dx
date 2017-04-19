@@ -235,7 +235,7 @@
 #define RETSIGTYPE void
 
 /* Define to file to use for scoreboard */
-#define SCOREFILE "rogue.scr"
+//#define SCOREFILE "rogue.scr"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
