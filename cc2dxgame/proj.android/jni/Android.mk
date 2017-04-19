@@ -31,11 +31,11 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 		../../../rogue-5.4/io.c \
 		../../../rogue-5.4/list.c \
 		../../../rogue-5.4/mach_dep.c \
-		../../../rogue-5.4/main.c \
+		../../../rogue-5.4/rogue_main.c \
 		../../../rogue-5.4/mdport.c \
 		../../../rogue-5.4/misc.c \
 		../../../rogue-5.4/monsters.c \
-		../../../rogue-5.4/move.c \
+		../../../rogue-5.4/rogue_move.c \
 		../../../rogue-5.4/new_level.c \
 		../../../rogue-5.4/options.c \
 		../../../rogue-5.4/pack.c \
