@@ -318,7 +318,7 @@ void PDC_napms(int p1)
 {
 	//    fprintf(stdout, "void PDC_napms(int)\n");
 #ifdef WIN32
-	Sleep(p1 * 50 * .001f);
+	Sleep(p1 * 50 * 0.0001f);
 #else
     usleep(p1 * 50);
 #endif
