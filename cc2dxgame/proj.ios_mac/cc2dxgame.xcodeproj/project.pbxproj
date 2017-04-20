@@ -127,10 +127,8 @@
 		449CC00F1E1A0D970037687A /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC51E1A0B860037687A /* io.c */; };
 		449CC0101E1A0D970037687A /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC61E1A0B860037687A /* list.c */; };
 		449CC0111E1A0D970037687A /* mach_dep.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC71E1A0B860037687A /* mach_dep.c */; };
-		449CC0121E1A0D970037687A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC81E1A0B860037687A /* main.c */; };
 		449CC0131E1A0D970037687A /* mdport.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC91E1A0B860037687A /* mdport.c */; };
 		449CC0141E1A0D970037687A /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCA1E1A0B860037687A /* misc.c */; };
-		449CC0161E1A0D970037687A /* move.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCC1E1A0B860037687A /* move.c */; };
 		449CC0171E1A0D970037687A /* new_level.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCD1E1A0B860037687A /* new_level.c */; };
 		449CC0181E1A0D970037687A /* options.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCE1E1A0B860037687A /* options.c */; };
 		449CC0191E1A0D970037687A /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCF1E1A0B860037687A /* pack.c */; };
@@ -360,11 +358,9 @@
 		44A229311E1A14BF00DBBD51 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC51E1A0B860037687A /* io.c */; };
 		44A229321E1A14BF00DBBD51 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC61E1A0B860037687A /* list.c */; };
 		44A229331E1A14BF00DBBD51 /* mach_dep.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC71E1A0B860037687A /* mach_dep.c */; };
-		44A229341E1A14BF00DBBD51 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC81E1A0B860037687A /* main.c */; };
 		44A229351E1A14CA00DBBD51 /* mdport.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFC91E1A0B860037687A /* mdport.c */; };
 		44A229361E1A14CA00DBBD51 /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCA1E1A0B860037687A /* misc.c */; };
 		44A229371E1A14CA00DBBD51 /* monsters.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCB1E1A0B860037687A /* monsters.c */; };
-		44A229381E1A14CA00DBBD51 /* move.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCC1E1A0B860037687A /* move.c */; };
 		44A229391E1A14CA00DBBD51 /* new_level.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCD1E1A0B860037687A /* new_level.c */; };
 		44A2293A1E1A14CA00DBBD51 /* options.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCE1E1A0B860037687A /* options.c */; };
 		44A2293B1E1A14CA00DBBD51 /* pack.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFCF1E1A0B860037687A /* pack.c */; };
@@ -402,6 +398,14 @@
 		44EB682D1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
 		44EB682E1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
 		44EB682F1E59BD7500084AA6 /* GameInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44EB682A1E59BD7500084AA6 /* GameInterface.cpp */; };
+		44F048381EA7B3EB0035DDE4 /* rogue_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048361EA7B3EB0035DDE4 /* rogue_main.c */; };
+		44F048391EA7B3EB0035DDE4 /* rogue_move.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048371EA7B3EB0035DDE4 /* rogue_move.c */; };
+		44F0483A1EA7B4080035DDE4 /* rogue_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048361EA7B3EB0035DDE4 /* rogue_main.c */; };
+		44F0483B1EA7B4080035DDE4 /* rogue_move.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048371EA7B3EB0035DDE4 /* rogue_move.c */; };
+		44F0483C1EA7B4090035DDE4 /* rogue_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048361EA7B3EB0035DDE4 /* rogue_main.c */; };
+		44F0483D1EA7B4090035DDE4 /* rogue_move.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048371EA7B3EB0035DDE4 /* rogue_move.c */; };
+		44F0483E1EA7B4090035DDE4 /* rogue_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048361EA7B3EB0035DDE4 /* rogue_main.c */; };
+		44F0483F1EA7B4090035DDE4 /* rogue_move.c in Sources */ = {isa = PBXBuildFile; fileRef = 44F048371EA7B3EB0035DDE4 /* rogue_move.c */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
 		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
@@ -546,11 +550,9 @@
 		449CBFC51E1A0B860037687A /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = io.c; path = "../../rogue-5.4/io.c"; sourceTree = "<group>"; };
 		449CBFC61E1A0B860037687A /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = list.c; path = "../../rogue-5.4/list.c"; sourceTree = "<group>"; };
 		449CBFC71E1A0B860037687A /* mach_dep.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mach_dep.c; path = "../../rogue-5.4/mach_dep.c"; sourceTree = "<group>"; };
-		449CBFC81E1A0B860037687A /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../rogue-5.4/main.c"; sourceTree = "<group>"; };
 		449CBFC91E1A0B860037687A /* mdport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mdport.c; path = "../../rogue-5.4/mdport.c"; sourceTree = "<group>"; };
 		449CBFCA1E1A0B860037687A /* misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = misc.c; path = "../../rogue-5.4/misc.c"; sourceTree = "<group>"; };
 		449CBFCB1E1A0B860037687A /* monsters.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = monsters.c; path = "../../rogue-5.4/monsters.c"; sourceTree = "<group>"; };
-		449CBFCC1E1A0B860037687A /* move.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = move.c; path = "../../rogue-5.4/move.c"; sourceTree = "<group>"; };
 		449CBFCD1E1A0B860037687A /* new_level.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = new_level.c; path = "../../rogue-5.4/new_level.c"; sourceTree = "<group>"; };
 		449CBFCE1E1A0B860037687A /* options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = options.c; path = "../../rogue-5.4/options.c"; sourceTree = "<group>"; };
 		449CBFCF1E1A0B860037687A /* pack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pack.c; path = "../../rogue-5.4/pack.c"; sourceTree = "<group>"; };
@@ -642,6 +644,8 @@
 		44EB68251E59BD3500084AA6 /* hud.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hud.tmx; sourceTree = "<group>"; };
 		44EB682A1E59BD7500084AA6 /* GameInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameInterface.cpp; sourceTree = "<group>"; };
 		44EB682B1E59BD7500084AA6 /* GameInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameInterface.hpp; sourceTree = "<group>"; };
+		44F048361EA7B3EB0035DDE4 /* rogue_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rogue_main.c; path = "../../rogue-5.4/rogue_main.c"; sourceTree = "<group>"; };
+		44F048371EA7B3EB0035DDE4 /* rogue_move.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rogue_move.c; path = "../../rogue-5.4/rogue_move.c"; sourceTree = "<group>"; };
 		44F6D7231E19EA33000501ED /* stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stuff.h; path = "../../atrogue-0.3.0/stuff.h"; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -866,6 +870,8 @@
 		444AC5A11E1A09A100566935 /* rogue54 */ = {
 			isa = PBXGroup;
 			children = (
+				44F048361EA7B3EB0035DDE4 /* rogue_main.c */,
+				44F048371EA7B3EB0035DDE4 /* rogue_move.c */,
 				449CBFBA1E1A0B860037687A /* armor.c */,
 				449CBFBB1E1A0B860037687A /* chase.c */,
 				449CBFBC1E1A0B860037687A /* command.c */,
@@ -880,11 +886,9 @@
 				449CBFC51E1A0B860037687A /* io.c */,
 				449CBFC61E1A0B860037687A /* list.c */,
 				449CBFC71E1A0B860037687A /* mach_dep.c */,
-				449CBFC81E1A0B860037687A /* main.c */,
 				449CBFC91E1A0B860037687A /* mdport.c */,
 				449CBFCA1E1A0B860037687A /* misc.c */,
 				449CBFCB1E1A0B860037687A /* monsters.c */,
-				449CBFCC1E1A0B860037687A /* move.c */,
 				449CBFCD1E1A0B860037687A /* new_level.c */,
 				449CBFCE1E1A0B860037687A /* options.c */,
 				449CBFCF1E1A0B860037687A /* pack.c */,
@@ -1397,6 +1401,7 @@
 				44A0259D1E19E59B009A0E2C /* insstr.c in Sources */,
 				44A0258E1E19E59B009A0E2C /* border.c in Sources */,
 				44A025A21E19E59B009A0E2C /* move.c in Sources */,
+				44F048391EA7B3EB0035DDE4 /* rogue_move.c in Sources */,
 				44A025881E19E59B009A0E2C /* addch.c in Sources */,
 				44EB68201E59635B00084AA6 /* GraphicsTileMap.cpp in Sources */,
 				44A025A91E19E59B009A0E2C /* refresh.c in Sources */,
@@ -1420,6 +1425,7 @@
 				44A025B01E19E59B009A0E2C /* touch.c in Sources */,
 				44A025C11E19E6C8009A0E2C /* creature.c in Sources */,
 				44A025921E19E59B009A0E2C /* delch.c in Sources */,
+				44F048381EA7B3EB0035DDE4 /* rogue_main.c in Sources */,
 				44A0259A1E19E59B009A0E2C /* initscr.c in Sources */,
 				44A025901E19E59B009A0E2C /* color.c in Sources */,
 				44A0258B1E19E59B009A0E2C /* attr.c in Sources */,
@@ -1462,6 +1468,7 @@
 				449CC0281E1A0D970037687A /* wizard.c in Sources */,
 				449CC0071E1A0D970037687A /* chase.c in Sources */,
 				444AC5B81E1A0A8500566935 /* CursesTileMap.cpp in Sources */,
+				44F0483C1EA7B4090035DDE4 /* rogue_main.c in Sources */,
 				449CC0131E1A0D970037687A /* mdport.c in Sources */,
 				444AC5B91E1A0A8500566935 /* initscr.c in Sources */,
 				444AC5BA1E1A0A8500566935 /* addch.c in Sources */,
@@ -1469,10 +1476,8 @@
 				449CC01A1E1A0D970037687A /* passages.c in Sources */,
 				444AC5BC1E1A0A8500566935 /* addstr.c in Sources */,
 				449CC0191E1A0D970037687A /* pack.c in Sources */,
-				449CC0161E1A0D970037687A /* move.c in Sources */,
 				444AC5BE1E1A0A8500566935 /* instr.c in Sources */,
 				444AC5BF1E1A0A8500566935 /* addchstr.c in Sources */,
-				449CC0121E1A0D970037687A /* main.c in Sources */,
 				449CC0061E1A0D970037687A /* armor.c in Sources */,
 				444AC5C01E1A0A8500566935 /* inopts.c in Sources */,
 				444AC5C11E1A0A8500566935 /* color.c in Sources */,
@@ -1516,6 +1521,7 @@
 				444AC5E01E1A0A8500566935 /* deprec.c in Sources */,
 				444AC5E11E1A0A8500566935 /* panel.c in Sources */,
 				449CC0271E1A0D970037687A /* weapons.c in Sources */,
+				44F0483D1EA7B4090035DDE4 /* rogue_move.c in Sources */,
 				444AC5E21E1A0A8500566935 /* inchstr.c in Sources */,
 				449CC01F1E1A0D970037687A /* save.c in Sources */,
 				444AC5E31E1A0A8500566935 /* HelloWorldScene.cpp in Sources */,
@@ -1558,9 +1564,11 @@
 				44D209C41E5FE03800506063 /* micropather.cpp in Sources */,
 				44A228E51E1A125200DBBD51 /* overlay.c in Sources */,
 				44A2292E1E1A14BF00DBBD51 /* extern.c in Sources */,
+				44F0483E1EA7B4090035DDE4 /* rogue_main.c in Sources */,
 				44A2293F1E1A14CA00DBBD51 /* rip.c in Sources */,
 				44A228E71E1A125200DBBD51 /* insstr.c in Sources */,
 				44A228E81E1A125200DBBD51 /* border.c in Sources */,
+				44F0483F1EA7B4090035DDE4 /* rogue_move.c in Sources */,
 				44A228E91E1A125200DBBD51 /* move.c in Sources */,
 				44A228EA1E1A125200DBBD51 /* addch.c in Sources */,
 				44A2293B1E1A14CA00DBBD51 /* pack.c in Sources */,
@@ -1609,12 +1617,10 @@
 				44A229081E1A125200DBBD51 /* getyx.c in Sources */,
 				44A229091E1A125200DBBD51 /* printw.c in Sources */,
 				44A229351E1A14CA00DBBD51 /* mdport.c in Sources */,
-				44A229341E1A14BF00DBBD51 /* main.c in Sources */,
 				44A2290A1E1A125200DBBD51 /* RootViewController.mm in Sources */,
 				44A2293C1E1A14CA00DBBD51 /* passages.c in Sources */,
 				44A2290B1E1A125200DBBD51 /* main.m in Sources */,
 				44A2290C1E1A125200DBBD51 /* CursesTileMap.cpp in Sources */,
-				44A229381E1A14CA00DBBD51 /* move.c in Sources */,
 				44A2290D1E1A125200DBBD51 /* addstr.c in Sources */,
 				44A2290E1E1A125200DBBD51 /* inch.c in Sources */,
 				44A2290F1E1A125200DBBD51 /* scr_dump.c in Sources */,
@@ -1632,11 +1638,13 @@
 				44A025EC1E19E704009A0E2C /* refresh.c in Sources */,
 				44A025F51E19E704009A0E2C /* window.c in Sources */,
 				44A026081E19E9CA009A0E2C /* stuff.c in Sources */,
+				44F0483A1EA7B4080035DDE4 /* rogue_main.c in Sources */,
 				44A025F11E19E704009A0E2C /* termattr.c in Sources */,
 				44A025ED1E19E704009A0E2C /* scanw.c in Sources */,
 				444AC5971E19EBCF00566935 /* CursesTileMap.cpp in Sources */,
 				44A025DD1E19E704009A0E2C /* initscr.c in Sources */,
 				44A025CB1E19E704009A0E2C /* addch.c in Sources */,
+				44F0483B1EA7B4080035DDE4 /* rogue_move.c in Sources */,
 				44A025D41E19E704009A0E2C /* debug.c in Sources */,
 				44A025CD1E19E704009A0E2C /* addstr.c in Sources */,
 				44A026061E19E9CA009A0E2C /* random.c in Sources */,
