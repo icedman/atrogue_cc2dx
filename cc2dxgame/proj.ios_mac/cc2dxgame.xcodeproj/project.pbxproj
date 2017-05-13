@@ -346,7 +346,6 @@
 		44A2291E1E1A125200DBBD51 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		44A2291F1E1A125200DBBD51 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		44A229261E1A146000DBBD51 /* rogue-5.4-mobile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A229251E1A146000DBBD51 /* rogue-5.4-mobile-Info.plist */; };
-		44A229281E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A229271E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist */; };
 		44A229291E1A14AD00DBBD51 /* armor.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFBA1E1A0B860037687A /* armor.c */; };
 		44A2292A1E1A14BF00DBBD51 /* chase.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFBB1E1A0B860037687A /* chase.c */; };
 		44A2292B1E1A14BF00DBBD51 /* command.c in Sources */ = {isa = PBXBuildFile; fileRef = 449CBFBC1E1A0B860037687A /* command.c */; };
@@ -635,7 +634,6 @@
 		44A025FA1E19E955009A0E2C /* pdccc2dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pdccc2dx.h; path = "../../PDCurses-3.4/cc2dx/pdccc2dx.h"; sourceTree = "<group>"; };
 		44A229231E1A125200DBBD51 /* rogue-5.4-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rogue-5.4-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A229251E1A146000DBBD51 /* rogue-5.4-mobile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "rogue-5.4-mobile-Info.plist"; path = "ios/rogue-5.4-mobile-Info.plist"; sourceTree = SOURCE_ROOT; };
-		44A229271E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "rogue-5.4-desktop-Info.plist"; path = "mac/rogue-5.4-desktop-Info.plist"; sourceTree = "<group>"; };
 		44D209B91E5E558400506063 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		44D209BF1E5FE02400506063 /* micropather.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = micropather.cpp; sourceTree = "<group>"; };
 		44D209C01E5FE02400506063 /* micropather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = micropather.h; sourceTree = "<group>"; };
@@ -1053,7 +1051,6 @@
 		503AE10617EB990700D1A890 /* mac */ = {
 			isa = PBXGroup;
 			children = (
-				44A229271E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist */,
 				503AE0F517EB97AB00D1A890 /* Icons */,
 				503AE10317EB98FF00D1A890 /* main.cpp */,
 				503AE10417EB98FF00D1A890 /* Prefix.pch */,
@@ -1266,7 +1263,6 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				4452C9C71E5BBC8300AFFFA0 /* VeniceClassic.ttf in Resources */,
 				444AC59D1E19ECF200566935 /* blank.tmx in Resources */,
-				44A229281E1A146A00DBBD51 /* rogue-5.4-desktop-Info.plist in Resources */,
 				4438F64D1E5D580C008020A5 /* button.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
